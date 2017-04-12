@@ -1,0 +1,61 @@
+unit Unit1;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+                  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, 
+                    Dialogs, StdCtrls, ExtCtrls;
+
+type
+
+		  { TForm1 }
+
+                  TForm1 = class(TForm)
+				    Login: TEdit;
+				    Passwod: TEdit;
+				    Forpassword: TLabel;
+				    GroupBox1: TGroupBox;
+				    foradm: TGroupBox;
+				    Forlogin: TLabel;
+				    Admbutt: TPanel;
+				    Wiki: TPanel;
+				    procedure AdmbuttClick(Sender: TObject);
+        procedure foradmClick(Sender: TObject);
+        procedure Image1Click(Sender: TObject);
+                  private
+                                    { private declarations }
+                  public
+                                    { public declarations }
+                  end;
+
+var
+                  Form1: TForm1;
+
+implementation
+
+{$R *.lfm}
+
+{ TForm1 }
+
+procedure TForm1.Image1Click(Sender: TObject);
+begin
+
+end;
+
+procedure TForm1.foradmClick(Sender: TObject);
+begin
+
+end;
+
+procedure TForm1.AdmbuttClick(Sender: TObject);
+begin
+  if Foradm.Visible = false then
+  Foradm.Visible:=true
+  else
+    Foradm.Visible:=false;
+end;
+
+end.
+

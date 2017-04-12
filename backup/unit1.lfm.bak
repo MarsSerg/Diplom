@@ -1,0 +1,114 @@
+object Form1: TForm1
+  Left = 294
+  Height = 488
+  Top = 103
+  Width = 681
+  Caption = 'Form1'
+  ClientHeight = 488
+  ClientWidth = 681
+  LCLVersion = '1.2.4.0'
+  object GroupBox1: TGroupBox
+    Left = 0
+    Height = 497
+    Top = 0
+    Width = 681
+    ClientHeight = 479
+    ClientWidth = 677
+    Color = 8454016
+    ParentColor = False
+    TabOrder = 0
+    object foradm: TGroupBox
+      Left = 344
+      Height = 97
+      Top = 16
+      Width = 330
+      ClientHeight = 79
+      ClientWidth = 326
+      Color = clMaroon
+      ParentColor = False
+      TabOrder = 0
+      Visible = False
+      OnClick = foradmClick
+      object Forlogin: TLabel
+        Left = 8
+        Height = 24
+        Top = 0
+        Width = 53
+        Caption = 'Login'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -21
+        Font.Name = 'Bauhaus 93'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Forpassword: TLabel
+        Left = 8
+        Height = 24
+        Top = 40
+        Width = 95
+        Caption = 'Password'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -21
+        Font.Name = 'Bauhaus 93'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit1: TEdit
+        Left = 112
+        Height = 23
+        Top = 1
+        Width = 194
+        TabOrder = 0
+        Text = 'Edit1'
+      end
+      object Edit2: TEdit
+        Left = 112
+        Height = 23
+        Top = 40
+        Width = 194
+        TabOrder = 1
+        Text = 'Edit2'
+      end
+    end
+    object Admbutt: TPanel
+      Left = 592
+      Height = 24
+      Top = -8
+      Width = 82
+      Caption = 'Admin'
+      Color = 8453888
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -21
+      Font.Name = 'Bauhaus 93'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentColor = False
+      ParentFont = False
+      TabOrder = 1
+      OnClick = AdmbuttClick
+    end
+    object Wiki: TPanel
+      Left = 0
+      Height = 34
+      Top = -8
+      Width = 96
+      Caption = 'Wiki'
+      Color = 8453888
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -27
+      Font.Name = 'Bauhaus 93'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+      TabOrder = 2
+    end
+  end
+end
