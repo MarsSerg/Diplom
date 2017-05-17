@@ -1,14 +1,15 @@
 object Form2: TForm2
-  Left = 304
+  Left = 424
   Height = 406
-  Top = 230
+  Top = 138
   Width = 566
+  BorderStyle = bsToolWindow
   Caption = 'Form2'
-  ClientHeight = 406
-  ClientWidth = 566
+  ClientHeight = 0
+  ClientWidth = 0
   LCLVersion = '1.2.4.0'
   object GroupBox2: TGroupBox
-    Left = 0
+    Left = -2
     Height = 407
     Top = 0
     Width = 568
@@ -133,10 +134,10 @@ object Form2: TForm2
       ParentFont = False
     end
     object Image1: TImage
-      Left = 368
-      Height = 287
+      Left = 360
+      Height = 352
       Top = 8
-      Width = 176
+      Width = 200
     end
     object Imgload: TPanel
       Left = 224
@@ -161,6 +162,14 @@ object Form2: TForm2
       Width = 170
       Caption = 'Panel1'
       TabOrder = 6
+    end
+    object Edit1: TEdit
+      Left = 184
+      Height = 23
+      Top = 88
+      Width = 80
+      TabOrder = 7
+      Text = 'Edit1'
     end
   end
   object OpenDialog1: TOpenDialog

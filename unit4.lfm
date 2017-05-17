@@ -1,0 +1,399 @@
+object Form4: TForm4
+  Left = 744
+  Height = 552
+  Top = 279
+  Width = 896
+  BorderStyle = bsToolWindow
+  Caption = 'Form4'
+  ClientHeight = 552
+  ClientWidth = 896
+  LCLVersion = '1.2.4.0'
+  object Grpdeck: TGroupBox
+    Left = 0
+    Height = 621
+    Top = 0
+    Width = 896
+    ClientHeight = 603
+    ClientWidth = 892
+    Color = clMaroon
+    ParentColor = False
+    TabOrder = 0
+    object Image1: TImage
+      Left = 24
+      Height = 352
+      Top = 56
+      Width = 211
+    end
+    object Name_of_deck: TLabel
+      Left = 48
+      Height = 24
+      Top = 8
+      Width = 152
+      Caption = 'Name_of_deck'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWhite
+      Font.Height = -21
+      Font.Name = 'Bauhaus 93'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Description: TLabel
+      Left = 264
+      Height = 21
+      Top = 56
+      Width = 110
+      Caption = 'Description'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWhite
+      Font.Height = -19
+      Font.Name = 'Bauhaus 93'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Grpdskr: TGroupBox
+      Left = 264
+      Height = 104
+      Top = 80
+      Width = 272
+      ClientHeight = 86
+      ClientWidth = 268
+      TabOrder = 0
+      object LblDescription: TLabel
+        Left = 8
+        Height = 18
+        Top = 0
+        Width = 83
+        Caption = 'Description'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clWhite
+        Font.Height = -16
+        Font.Name = 'Bauhaus 93'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentColor = False
+        ParentFont = False
+      end
+    end
+    object Riding_styles: TLabel
+      Left = 608
+      Height = 21
+      Top = 56
+      Width = 120
+      Caption = 'Riding styles'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWhite
+      Font.Height = -19
+      Font.Name = 'Bauhaus 93'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object grride: TGroupBox
+      Left = 600
+      Height = 104
+      Top = 80
+      Width = 272
+      ClientHeight = 86
+      ClientWidth = 268
+      TabOrder = 1
+      object Lblstyles: TLabel
+        Left = 8
+        Height = 18
+        Top = 0
+        Width = 41
+        Caption = 'Styles'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clWhite
+        Font.Height = -16
+        Font.Name = 'Bauhaus 93'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentColor = False
+        ParentFont = False
+      end
+    end
+    object Params: TLabel
+      Left = 264
+      Height = 21
+      Top = 200
+      Width = 72
+      Caption = 'Options'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWhite
+      Font.Height = -19
+      Font.Name = 'Bauhaus 93'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Grparam: TGroupBox
+      Left = 263
+      Height = 202
+      Top = 240
+      Width = 273
+      ClientHeight = 184
+      ClientWidth = 269
+      TabOrder = 2
+      object Lblwidth: TLabel
+        Left = 8
+        Height = 18
+        Top = 32
+        Width = 41
+        Caption = 'Width'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clWhite
+        Font.Height = -16
+        Font.Name = 'Bauhaus 93'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentColor = False
+        ParentFont = False
+      end
+      object Lbllength: TLabel
+        Left = 8
+        Height = 18
+        Top = 0
+        Width = 46
+        Caption = 'Length'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clWhite
+        Font.Height = -16
+        Font.Name = 'Bauhaus 93'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentColor = False
+        ParentFont = False
+      end
+      object Lblwhlbs: TLabel
+        Left = 8
+        Height = 18
+        Top = 64
+        Width = 78
+        Caption = 'Wheelbase'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clWhite
+        Font.Height = -16
+        Font.Name = 'Bauhaus 93'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentColor = False
+        ParentFont = False
+      end
+      object Lblnose: TLabel
+        Left = 8
+        Height = 18
+        Top = 96
+        Width = 33
+        Caption = 'Nose'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clWhite
+        Font.Height = -16
+        Font.Name = 'Bauhaus 93'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentColor = False
+        ParentFont = False
+      end
+      object Lbltail: TLabel
+        Left = 8
+        Height = 18
+        Top = 128
+        Width = 27
+        Caption = 'Tail'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clWhite
+        Font.Height = -16
+        Font.Name = 'Bauhaus 93'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentColor = False
+        ParentFont = False
+      end
+      object Lbldcktp: TLabel
+        Left = 8
+        Height = 18
+        Top = 160
+        Width = 75
+        Caption = 'Deck type'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clWhite
+        Font.Height = -16
+        Font.Name = 'Bauhaus 93'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentColor = False
+        ParentFont = False
+      end
+    end
+    object Parts: TLabel
+      Left = 600
+      Height = 21
+      Top = 200
+      Width = 46
+      Caption = 'Parts'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWhite
+      Font.Height = -19
+      Font.Name = 'Bauhaus 93'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Grpparts: TGroupBox
+      Left = 600
+      Height = 289
+      Top = 232
+      Width = 246
+      ClientHeight = 271
+      ClientWidth = 242
+      TabOrder = 3
+      object Lbltrcks: TLabel
+        Left = 8
+        Height = 21
+        Top = 0
+        Width = 54
+        Caption = 'Trucks'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clWhite
+        Font.Height = -19
+        Font.Name = 'Bauhaus 93'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentColor = False
+        ParentFont = False
+      end
+      object Lbltrsize: TLabel
+        Left = 32
+        Height = 18
+        Top = 32
+        Width = 29
+        Caption = 'Size'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clWhite
+        Font.Height = -16
+        Font.Name = 'Bauhaus 93'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentColor = False
+        ParentFont = False
+      end
+      object Lbltrtype: TLabel
+        Left = 32
+        Height = 18
+        Top = 56
+        Width = 35
+        Caption = 'Type'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clWhite
+        Font.Height = -16
+        Font.Name = 'Bauhaus 93'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentColor = False
+        ParentFont = False
+      end
+      object LblWhls: TLabel
+        Left = 7
+        Height = 21
+        Top = 88
+        Width = 60
+        Caption = 'Wheels'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clWhite
+        Font.Height = -19
+        Font.Name = 'Bauhaus 93'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentColor = False
+        ParentFont = False
+      end
+      object Lbltrsize1: TLabel
+        Left = 33
+        Height = 18
+        Top = 120
+        Width = 29
+        Caption = 'Size'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clWhite
+        Font.Height = -16
+        Font.Name = 'Bauhaus 93'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentColor = False
+        ParentFont = False
+      end
+      object Lblwhhrd: TLabel
+        Left = 33
+        Height = 18
+        Top = 144
+        Width = 63
+        Caption = 'Hardness'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clWhite
+        Font.Height = -16
+        Font.Name = 'Bauhaus 93'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentColor = False
+        ParentFont = False
+      end
+      object Lblbr: TLabel
+        Left = 8
+        Height = 21
+        Top = 176
+        Width = 73
+        Caption = 'Bearings'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clWhite
+        Font.Height = -19
+        Font.Name = 'Bauhaus 93'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentColor = False
+        ParentFont = False
+      end
+      object Lblbrname: TLabel
+        Left = 32
+        Height = 18
+        Top = 216
+        Width = 39
+        Caption = 'Name'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clWhite
+        Font.Height = -16
+        Font.Name = 'Bauhaus 93'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentColor = False
+        ParentFont = False
+      end
+      object Lblmdof: TLabel
+        Left = 33
+        Height = 18
+        Top = 240
+        Width = 59
+        Caption = 'Made of'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clWhite
+        Font.Height = -16
+        Font.Name = 'Bauhaus 93'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentColor = False
+        ParentFont = False
+      end
+    end
+  end
+end

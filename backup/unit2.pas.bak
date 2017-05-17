@@ -23,6 +23,7 @@ type
 				    GroupBox2: TGroupBox;
 				    Image1: TImage;
 				    Imgload: TPanel;
+				    OpenDialog1: TOpenDialog;
 				    Panel1: TPanel;
 				    Ridingstyle: TLabel;
 				    Tracks: TLabel;
@@ -45,7 +46,7 @@ implementation
 
 procedure TForm2.ImgloadClick(Sender: TObject);
 begin
-   If TForm2.OpenDialog1.Execute then
+   If OpenDialog1.Execute then
    try
        Image1.Picture.LoadFromFile(OpenDialog1.FileName);
    except

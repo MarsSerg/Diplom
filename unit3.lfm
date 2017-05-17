@@ -1,0 +1,264 @@
+object Form3: TForm3
+  Left = 568
+  Height = 537
+  Top = 281
+  Width = 815
+  BorderStyle = bsToolWindow
+  Caption = 'Form3'
+  ClientHeight = 537
+  ClientWidth = 815
+  OnActivate = FormActivate
+  OnCreate = FormCreate
+  LCLVersion = '1.2.4.0'
+  object GroupBox1: TGroupBox
+    Left = 0
+    Height = 538
+    Top = -1
+    Width = 815
+    ClientHeight = 520
+    ClientWidth = 811
+    Color = 3681453
+    ParentColor = False
+    TabOrder = 0
+    object grpskate1: TGroupBox
+      Left = 16
+      Height = 473
+      Top = 0
+      Width = 253
+      Caption = 'grpskate1'
+      ClientHeight = 455
+      ClientWidth = 249
+      TabOrder = 0
+      object Image1: TImage
+        Left = 24
+        Height = 344
+        Top = 48
+        Width = 208
+      end
+      object Brdname1: TLabel
+        Left = 24
+        Height = 21
+        Top = 16
+        Width = 94
+        Caption = 'Brdname1'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -19
+        Font.Name = 'Bauhaus 93'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object lbldskr1: TLabel
+        Left = 24
+        Height = 16
+        Top = 400
+        Width = 86
+        Caption = 'Description'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -15
+        Font.Name = 'Bauhaus 93'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Lblabout: TLabel
+        Left = 88
+        Height = 18
+        Top = 432
+        Width = 74
+        Caption = 'Подробнее'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clAqua
+        Font.Height = -16
+        Font.Name = 'Bauhaus 93'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+    end
+    object grpskate2: TGroupBox
+      Left = 280
+      Height = 473
+      Top = 0
+      Width = 253
+      Caption = 'grpskate2'
+      ClientHeight = 455
+      ClientWidth = 249
+      TabOrder = 1
+      object Image2: TImage
+        Left = 24
+        Height = 344
+        Top = 48
+        Width = 208
+      end
+      object Brdname2: TLabel
+        Left = 24
+        Height = 21
+        Top = 16
+        Width = 94
+        Caption = 'Brdname1'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -19
+        Font.Name = 'Bauhaus 93'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object lbldskr2: TLabel
+        Left = 24
+        Height = 16
+        Top = 400
+        Width = 86
+        Caption = 'Description'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -15
+        Font.Name = 'Bauhaus 93'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Lblabout1: TLabel
+        Left = 88
+        Height = 18
+        Top = 432
+        Width = 74
+        Caption = 'Подробнее'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clAqua
+        Font.Height = -16
+        Font.Name = 'Bauhaus 93'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+    end
+    object grpbox: TGroupBox
+      Left = 544
+      Height = 473
+      Top = 0
+      Width = 253
+      Caption = 'grpbox'
+      ClientHeight = 455
+      ClientWidth = 249
+      TabOrder = 2
+      object Image3: TImage
+        Left = 24
+        Height = 344
+        Top = 48
+        Width = 208
+      end
+      object Brdname3: TLabel
+        Left = 24
+        Height = 21
+        Top = 16
+        Width = 94
+        Caption = 'Brdname1'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -19
+        Font.Name = 'Bauhaus 93'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object lbldskr3: TLabel
+        Left = 24
+        Height = 16
+        Top = 400
+        Width = 86
+        Caption = 'Description'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -15
+        Font.Name = 'Bauhaus 93'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Lblabout2: TLabel
+        Left = 88
+        Height = 18
+        Top = 432
+        Width = 74
+        Caption = 'Подробнее'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clAqua
+        Font.Height = -16
+        Font.Name = 'Bauhaus 93'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+    end
+    object PnlNext: TPanel
+      Left = 320
+      Height = 34
+      Top = 480
+      Width = 160
+      Caption = 'Next'
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -19
+      Font.Name = 'Bauhaus 93'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 3
+      OnClick = PnlNextClick
+    end
+  end
+  object Qryinfo: TSQLQuery
+    FieldDefs = <>
+    Database = MSSQLConnection1
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'SELECT     s1.Skate_ID, s1.Picture, s1.Tracks_ID, s1.Bearings_ID, s1.[Description],'
+      ' s1.Name, s1.Wheels_ID, s1.Boardstyle_ID,'
+      '   b1.Type_of_deck, sr1.Ridingstyle_ID'
+      '   FROM       Skateboard s1'
+      '   INNER JOIN  Boardstyle b1 ON s1.Boardstyle_ID = b1.Boardstyle_ID'
+      '   INNER JOIN  Skate_Riding sr1 ON s1.Skate_ID = sr1.Skate_ID'
+      '   INNER JOIN'
+      '   Riding_Style rs1 ON rs1.Ridingstyle_ID = sr1.Ridingstyle_ID'
+      '   Where'
+    )
+    Params = <>
+    DataSource = DataSource1
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = True
+    Database = MSSQLConnection1
+    left = 40
+  end
+  object MSSQLConnection1: TMSSQLConnection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'Diploma'
+    KeepConnection = False
+    Password = 'qwerty'
+    Transaction = SQLTransaction1
+    UserName = 'AdmSkate'
+    HostName = 'localhost'
+    LogEvents = []
+    left = 80
+  end
+  object DataSource1: TDataSource
+    left = 120
+  end
+end

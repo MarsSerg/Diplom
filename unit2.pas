@@ -15,6 +15,7 @@ type
                   TForm2 = class(TForm)
 				    Bearings: TLabel;
 				    Boardstyle: TLabel;
+				    Edit1: TEdit;
 				    forbrdstl: TComboBox;
 				    forbrng: TComboBox;
 				    forrdngstl: TComboBox;
