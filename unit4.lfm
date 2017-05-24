@@ -1,7 +1,7 @@
 object Form4: TForm4
-  Left = 776
+  Left = 398
   Height = 552
-  Top = 523
+  Top = 213
   Width = 895
   BorderStyle = bsToolWindow
   Caption = 'Form4'

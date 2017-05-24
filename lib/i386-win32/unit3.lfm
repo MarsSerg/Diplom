@@ -1,7 +1,7 @@
 object Form3: TForm3
-  Left = 571
+  Left = 157
   Height = 537
-  Top = 459
+  Top = 406
   Width = 814
   BorderStyle = bsToolWindow
   Caption = 'Form3'
@@ -9,6 +9,7 @@ object Form3: TForm3
   ClientWidth = 814
   OnActivate = FormActivate
   OnCreate = FormCreate
+  OnShow = FormShow
   LCLVersion = '1.2.4.0'
   object GroupBox1: TGroupBox
     Left = 0
