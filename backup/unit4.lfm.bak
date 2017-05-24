@@ -1,12 +1,12 @@
 object Form4: TForm4
-  Left = 750
+  Left = 455
   Height = 552
-  Top = 294
-  Width = 896
+  Top = 137
+  Width = 895
   BorderStyle = bsToolWindow
   Caption = 'Form4'
   ClientHeight = 552
-  ClientWidth = 896
+  ClientWidth = 895
   LCLVersion = '1.2.4.0'
   object Grpdeck: TGroupBox
     Left = 0

@@ -1,12 +1,12 @@
 object Form3: TForm3
-  Left = 376
+  Left = 918
   Height = 537
-  Top = 114
-  Width = 815
+  Top = 223
+  Width = 814
   BorderStyle = bsToolWindow
   Caption = 'Form3'
   ClientHeight = 537
-  ClientWidth = 815
+  ClientWidth = 814
   OnActivate = FormActivate
   OnCreate = FormCreate
   LCLVersion = '1.2.4.0'
@@ -80,6 +80,7 @@ object Form3: TForm3
         Font.Style = [fsBold]
         ParentColor = False
         ParentFont = False
+        OnClick = Formopen
       end
     end
     object grpskate2: TGroupBox
@@ -142,6 +143,7 @@ object Form3: TForm3
         Font.Style = [fsBold]
         ParentColor = False
         ParentFont = False
+        OnClick = Formopen
       end
     end
     object grpbox: TGroupBox
@@ -204,6 +206,7 @@ object Form3: TForm3
         Font.Style = [fsBold]
         ParentColor = False
         ParentFont = False
+        OnClick = Formopen
       end
     end
     object PnlNext: TPanel
@@ -236,6 +239,7 @@ object Form3: TForm3
       '   INNER JOIN  Skate_Riding sr1 ON s1.Skate_ID = sr1.Skate_ID'
       '   INNER JOIN'
       '   Riding_Style rs1 ON rs1.Ridingstyle_ID = sr1.Ridingstyle_ID'
+      '   Where'
     )
     Params = <>
     DataSource = DataSource1

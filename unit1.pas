@@ -13,21 +13,20 @@ type
 		  { TForm1 }
 
                   TForm1 = class(TForm)
-				    DataSource1: TDataSource;
-				    DBtxtquest: TDBText;
-				    DSquestion: TDataSource;
-				    DBNavigator1: TDBNavigator;
-				    Label1: TLabel;
-				    Label2: TLabel;
-				    Label3: TLabel;
-				    QueryQuest: TSQLQuery;
+                                    QueryQuest: TSQLQuery;
 				    Qryforid: TSQLQuery;
-				    Startimg: TImage;
-				    OkPanel: TPanel;
-				    MSSQLConnection1: TMSSQLConnection;
-				    OpenDialog1: TOpenDialog;
+                                    MSSQLConnection1: TMSSQLConnection;
 				    qryTestSkate: TSQLQuery;
 				    SQLTransaction1: TSQLTransaction;
+				    DSquestion: TDataSource;
+				    DBtxtquest: TDBText;
+				    DBNavigator1: TDBNavigator;
+				    Image1: TImage;
+				    Rbvar1: TRadioButton;
+				    Rbvar2: TRadioButton;
+				    Rbvar3: TRadioButton;
+				    Startimg: TImage;
+				    OkPanel: TPanel;
 				    Login: TEdit;
 				    Passwod: TEdit;
 				    Forpassword: TLabel;
@@ -41,15 +40,17 @@ type
 						      Sender: TObject; Button: TDBNavButtonType);
         procedure foradmClick(Sender: TObject);
 	procedure FormActivate(Sender: TObject);
+	procedure FormCreate(Sender: TObject);
 	procedure GroupBox2Click(Sender: TObject);
-        procedure Image1Click(Sender: TObject);
-	procedure AcceptClick(Sender: TObject);
+
+
 	procedure Label1Click(Sender: TObject);
 	procedure Label2Click(Sender: TObject);
 	procedure Label3Click(Sender: TObject);
-	procedure questIMGClick(Sender: TObject);
+
+
 	procedure StartIMGClick(Sender: TObject);
-	procedure MSSQLConnection1AfterConnect(Sender: TObject);
+
 	procedure OkPanelClick(Sender: TObject);
 	procedure Panel2Click(Sender: TObject);
         procedure printnextquest(isfirst:boolean = false);
@@ -64,6 +65,7 @@ type
 var
                   Form1: TForm1;
                   mass_label_id: array [1..3] of string;
+                  first_quest:boolean;
 
 implementation
 
@@ -83,9 +85,10 @@ begin
      iLabel := 1;
      while (not qryTestSkate.EOF) do begin
           case iLabel of
-             1: label1.Caption:=qryTestSkate.FieldByName('Text').Value;
-             2: label2.Caption:=qryTestSkate.FieldByName('Text').Value;
-             3: label3.Caption:=qryTestSkate.FieldByName('Text').Value;
+             1: Rbvar1.Caption:=qryTestSkate.FieldByName('Text').Value;
+
+             2: Rbvar2.Caption:=qryTestSkate.FieldByName('Text').Value;
+             3: Rbvar3.Caption:=qryTestSkate.FieldByName('Text').Value;
           end;
           mass_label_id [iLabel]:= qryTestSkate.FieldByName('Answer_Id').AsString;
           inc(iLabel);
@@ -98,44 +101,46 @@ begin
    Form3.ShowModal;
 end;
 
-procedure TForm1.Image1Click(Sender: TObject);
-begin
 
-end;
-
-procedure TForm1.AcceptClick(Sender: TObject);
-begin
-
-end;
 
 procedure TForm1.Label1Click(Sender: TObject);
 begin
-      Choosevar(mass_label_id[(Sender as tlabel).Tag]);
-end;
+      Choosevar(mass_label_id[(Sender as tradiobutton).Tag]);
+      printnextquest;
+      DBtxtquest.Refresh;
+  end;
+
 
 procedure TForm1.Label2Click(Sender: TObject);
 begin
-                  Choosevar(mass_label_id[(Sender as tlabel).Tag]);
+                  Choosevar(mass_label_id[(Sender as tradiobutton).Tag]);
+          printnextquest;
+      DBtxtquest.Refresh;
 end;
 
 procedure TForm1.Label3Click(Sender: TObject);
 begin
-                  Choosevar(mass_label_id[(Sender as tlabel).Tag]);
+     Choosevar(mass_label_id[(Sender as tradiobutton).Tag]);
+     printnextquest;
+     DBtxtquest.Refresh;
 end;
 
-procedure TForm1.questIMGClick(Sender: TObject);
-begin
-
-end;
 
 
 procedure TForm1.StartIMGClick(Sender: TObject);
 begin
+     first_quest:=true;
+     Rbvar3.Visible:=true;
+     Rbvar2.Visible:=true;
+     Rbvar1.Visible:=true;
+     Startimg.Visible:=false;
+     Dbtxtquest.DataField:='description';
+
      QueryQuest.Active:=false;
      QueryQuest.SQL.Clear;
      QueryQuest.SQL.Add('select quest_id,description from dbo.questions');
      QueryQuest.Active:=true;
-     Dbtxtquest.DataField:='description';
+
 
   qryTestSkate.Active:=false;
      qryTestSkate.SQL.Clear;
@@ -144,27 +149,38 @@ begin
      //DBtxtquest.DataField:='Text';
      //dbrdgrAnswers.DataField:='Text';
      printnextquest(true);
+     Image1.Visible:=true;
 
 
 end;
 
-procedure TForm1.MSSQLConnection1AfterConnect(Sender: TObject);
-begin
 
-end;
 
 procedure Tform1.Choosevar( var_id: string);
-var cond:string;
+var
+   cond:string;
+   sql_text:string;
+   sql_text_cond:string;
 begin
-      Qryforid.sql.Text:='select Selection from Answers where Answer_id=''' + var_id + '''';
+     sql_text:='select Selection from Answers where Answer_id=''' + var_id + '''';
+      Qryforid.sql.Text:=sql_text;
 
      Qryforid.Active:=true;
      cond := Qryforid.FieldByName('Selection').AsString;
      Qryforid.Active:=false;
      if cond <> '' then
      begin
+          sql_text_cond:=form3.qryinfo.SQL.Text;
+
           Form3.Qryinfo.Active:=false;
-          Form3.Qryinfo.SQL.Add(' And '+ cond);
+          if (not first_quest) then begin
+             sql_text_cond:= sql_text_cond + ' And ';
+	  end
+          else
+               first_quest:=false;
+	  sql_text_cond:= sql_text_cond + cond;
+
+              Form3.Qryinfo.SQL.Text := sql_text_cond;
           Form3.Qryinfo.Active:=true;
      end;
 end;
@@ -186,6 +202,11 @@ begin
 end;
 
 procedure TForm1.FormActivate(Sender: TObject);
+begin
+
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
 begin
 
 end;
@@ -214,4 +235,5 @@ begin
 
 
 end.
+
 

@@ -15,20 +15,25 @@ type
                   TForm2 = class(TForm)
 				    Bearings: TLabel;
 				    Boardstyle: TLabel;
+				    Fordescr: TEdit;
+				    Lblname: TLabel;
+				    Chkgrrdstl: TCheckGroup;
+				    Forname: TEdit;
 				    forbrdstl: TComboBox;
 				    forbrng: TComboBox;
-				    forrdngstl: TComboBox;
 				    fortracks: TComboBox;
 				    forwheels: TComboBox;
 				    GroupBox2: TGroupBox;
 				    Image1: TImage;
 				    Imgload: TPanel;
-				    OpenDialog1: TOpenDialog;
+				    Lblname1: TLabel;
+				    //OpenDialog1: TOpenDialog;
+				    //OpenDialog2: TOpenDialog;
 				    Panel1: TPanel;
 				    Ridingstyle: TLabel;
 				    Tracks: TLabel;
 				    Wheels: TLabel;
-				    procedure ImgloadClick(Sender: TObject);
+				   // procedure ImgloadClick(Sender: TObject);
                   private
                                     { private declarations }
                   public
@@ -44,16 +49,16 @@ implementation
 
 { TForm2 }
 
-procedure TForm2.ImgloadClick(Sender: TObject);
-begin
-   If OpenDialog1.Execute then
-   try
-       Image1.Picture.LoadFromFile(OpenDialog1.FileName);
-   except
-     on EInvalidGraphic do ShowMessage ('Ошибка загрузки')
-     else ShowMessage ('Прочие ошибки: ' + #13 + Exception(ExceptObject).Message);
-   end;
-end;
+//procedure TForm2.ImgloadClick(Sender: TObject);
+//begin
+//   If OpenDialog2.Execute then
+//   try
+//       Image1.Picture.LoadFromFile(OpenDialog2.FileName);
+//   except
+//     on EInvalidGraphic do ShowMessage ('Ошибка загрузки')
+//     else ShowMessage ('Прочие ошибки: ' + #13 + Exception(ExceptObject).Message);
+//   end;
+//end;
 
 
 end.

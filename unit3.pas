@@ -6,7 +6,7 @@ interface
 
 uses
                   Classes, SysUtils, sqldb, db, mssqlconn, FileUtil, Forms,
-		  Controls, Graphics, Dialogs, StdCtrls, ExtCtrls;
+		  Controls, Graphics, Dialogs, StdCtrls, ExtCtrls,Unit4;
 
 type
 
@@ -36,8 +36,10 @@ type
 				    SQLTransaction1: TSQLTransaction;
 				    procedure FormActivate(Sender: TObject);
 				    procedure FormCreate(Sender: TObject);
+				    procedure Formopen(Sender: TObject);
                                     Procedure LoadInfo;
 				    procedure PnlNextClick(Sender: TObject);
+
                   private
                                     { private declarations }
                   public
@@ -103,20 +105,31 @@ begin
      recstatus:=0;
      if (recstatus=0) then begin
         qryinfo.Active:=false;
-        qryinfo.SQL.Clear;
-        qryinfo.SQL.Add('Exec dbo.Skates');
-        qryinfo.Active:=true;
-        inc(recstatus);
-        loadinfo;
-
-        for recstatus:=2 to 3 do begin
-            qryinfo.Next;
-            if (not qryinfo.eof) then
-               loadinfo;
-	end;
+        //qryinfo.SQL.Clear;
+        //qryinfo.SQL.Add('Exec dbo.Skates');
+ //       qryinfo.Active:=true;
+ //       inc(recstatus);
+ //       loadinfo;
+ //
+ //       for recstatus:=2 to 3 do begin
+ //           qryinfo.Next;
+ //           if (not qryinfo.eof) then
+ //              loadinfo;
+	//end;
 
      end;
 end;
+
+procedure TForm3.Formopen(Sender: TObject);
+begin
+      form4.showmodal;
+end;
+
+
+
+
+
+
 
 
 end.
