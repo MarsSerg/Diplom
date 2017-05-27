@@ -1,11 +1,11 @@
 object Form3: TForm3
-  Left = 157
-  Height = 537
-  Top = 406
+  Left = 321
+  Height = 536
+  Top = 153
   Width = 814
   BorderStyle = bsToolWindow
   Caption = 'Form3'
-  ClientHeight = 537
+  ClientHeight = 536
   ClientWidth = 814
   OnActivate = FormActivate
   OnCreate = FormCreate
@@ -232,15 +232,15 @@ object Form3: TForm3
     Database = MSSQLConnection1
     Transaction = SQLTransaction1
     SQL.Strings = (
-      'SELECT     s1.Skate_ID, s1.Picture, s1.Tracks_ID, s1.Bearings_ID, s1.[Description],'
+      'SELECT   distinct  s1.Name as Skate_Name, s1.Skate_ID, s1.Picture, s1.Tracks_ID, s1.Bearings_ID, s1.[Description],'
       ' s1.Name, s1.Wheels_ID, s1.Boardstyle_ID,'
-      '   b1.Type_of_deck, sr1.Ridingstyle_ID'
+      '   b1.Type_of_deck'
       '   FROM       Skateboard s1'
       '   INNER JOIN  Boardstyle b1 ON s1.Boardstyle_ID = b1.Boardstyle_ID'
       '   INNER JOIN  Skate_Riding sr1 ON s1.Skate_ID = sr1.Skate_ID'
       '   INNER JOIN'
       '   Riding_Style rs1 ON rs1.Ridingstyle_ID = sr1.Ridingstyle_ID'
-      '   Where'
+      ''
     )
     Params = <>
     DataSource = DataSource1

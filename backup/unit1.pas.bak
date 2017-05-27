@@ -5,8 +5,8 @@ unit Unit1;
 interface
 
 uses
-Classes, SysUtils, mssqlconn, sqldb, DB, FileUtil, Forms,
-Controls, Graphics, Dialogs, StdCtrls, ExtCtrls, Grids, DBCtrls, Unit2, Unit3;
+Classes, SysUtils, mssqlconn, sqldb, DB, FileUtil, Forms, Controls, Graphics,
+Dialogs, StdCtrls, ExtCtrls, Grids, DBCtrls, DBGrids, Unit2, Unit3;
 
 type
 
@@ -14,6 +14,7 @@ type
 
 TForm1 = class(TForm)
 		  DataSource1: TDataSource;
+		  DBGrid1: TDBGrid;
 		  Rbvar1: TLabel;
   QueryQuest: TSQLQuery;
   Qryforid: TSQLQuery;
@@ -77,17 +78,21 @@ implementation
 procedure Tform1.printnextquest(isfirst: boolean = False);
 var
   iLabel: integer;
+  next_quest_id:string;
 begin
-  if (not isfirst)and (not QueryQuest.EOF) then
-    QueryQuest.Next
-    else
-      if ( QueryQuest.EOF) then begin
-        Form3.ShowModal;
-        Form3.loadinfo;
-      end;
+  if (not isfirst)and (not QueryQuest.EOF) then begin
+    Qryforid.Active := True;
+    next_quest_id:= Qryforid.FieldByName('Next_quest_id').AsString
+
+  end
+  else if (isfirst) then begin
+      next_quest_id:=QueryQuest.FieldByName('quest_id').Value;
+  end;
+  if (next_quest_id<>'') then
+    begin
 
   qryTestSkate.Filtered := False;
-  qryTestSkate.Filter := 'quest_id="' + QueryQuest.FieldByName('quest_id').Value + '"';
+  qryTestSkate.Filter := 'quest_id="' + next_quest_id + '"';
   qryTestSkate.Filtered := True;
   qryTestSkate.First;
   iLabel := 1;
@@ -102,6 +107,24 @@ begin
     mass_label_id[iLabel] := qryTestSkate.FieldByName('Answer_Id').AsString;
     Inc(iLabel);
     qryTestSkate.Next;
+    end;
+
+    end
+    else
+    begin
+
+
+         Rbvar3.Visible := false;
+         Rbvar2.Visible := false;
+         Rbvar1.Visible := false;
+         Startimg.Visible := true;
+
+         QueryQuest.Active := False;
+         qryTestSkate.Active := False;
+         Image1.Visible:=false;
+         form3.ShowModal;
+
+         //ShowMessage('Last question');
     end;
 end;
 
@@ -159,20 +182,18 @@ begin
   Rbvar2.Visible := True;
   Rbvar1.Visible := True;
   Startimg.Visible := False;
-  Dbtxtquest.DataField := 'description';
+  Wiki.Enabled:=true;
 
   QueryQuest.Active := False;
   QueryQuest.SQL.Clear;
-  QueryQuest.SQL.Add('select quest_id,description from dbo.questions');
+  QueryQuest.SQL.Add('select quest_id,description from dbo.questions where quest_id=''В.1.''');
   QueryQuest.Active := True;
-
 
   qryTestSkate.Active := False;
   qryTestSkate.SQL.Clear;
   qryTestSkate.SQL.Add('select * from dbo.test_quest_skate');
   qryTestSkate.Active := True;
-  DBtxtquest.DataField:='Text';
-  //dbrdgrAnswers.DataField:='Text';
+  DBtxtquest.DataField:='Description';
   printnextquest(True);
   Image1.Visible := True;
 
@@ -186,12 +207,15 @@ var
   sql_text: string;
   sql_text_cond: string;
 begin
-  sql_text := 'select Selection from Answers where Answer_id=''' + var_id + '''';
+
+  sql_text := 'select Quest_id,Selection,Next_quest_id from Answers where Answer_id=''' + var_id + '''';
   Qryforid.sql.Text := sql_text;
 
   Qryforid.Active := True;
+
   cond := Qryforid.FieldByName('Selection').AsString;
   Qryforid.Active := False;
+
   if cond <> '' then
     begin
     sql_text_cond := form3.qryinfo.SQL.Text;
@@ -201,8 +225,10 @@ begin
       begin
       sql_text_cond := sql_text_cond + ' And ';
       end
-    else
+    else begin
       first_quest := False;
+      sql_text_cond := sql_text_cond + ' Where ';
+      end;
     sql_text_cond := sql_text_cond + cond;
 
     Form3.Qryinfo.SQL.Text := sql_text_cond;
@@ -233,7 +259,7 @@ end;
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
-
+     Wiki.Enabled:=false;
 end;
 
 procedure TForm1.GroupBox2Click(Sender: TObject);
