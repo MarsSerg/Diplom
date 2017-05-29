@@ -24,6 +24,10 @@ TForm3 = class(TForm)
   Brdname1: TLabel;
   Image2: TImage;
   Image3: TImage;
+  Image4: TImage;
+  Image5: TImage;
+  Image6: TImage;
+  Image7: TImage;
   lbldskr1: TLabel;
   lbldskr2: TLabel;
   lbldskr3: TLabel;
@@ -38,6 +42,7 @@ TForm3 = class(TForm)
   procedure FormCreate(Sender: TObject);
   procedure Formopen(Sender: TObject);
   procedure FormShow(Sender: TObject);
+  procedure Image7Click(Sender: TObject);
   procedure PnlNextClick(Sender: TObject);
   procedure LoadPicture(img:TImage);
 
@@ -157,6 +162,11 @@ end;
 procedure TForm3.FormShow(Sender: TObject);
 begin
      PnlNextClick(pnlnext);
+end;
+
+procedure TForm3.Image7Click(Sender: TObject);
+begin
+
 end;
 
 

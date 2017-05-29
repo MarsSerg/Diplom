@@ -49,7 +49,10 @@ TForm1 = class(TForm)
   procedure Label1Click(Sender: TObject);
   procedure Label2Click(Sender: TObject);
   procedure Label3Click(Sender: TObject);
-
+  procedure MouseEnter(vars: Tlabel);
+  procedure MouseEnter(Sender: TObject);
+  procedure MouseLeave(vars: Tlabel);
+  procedure MouseLeave(Sender: TObject);
 
   procedure StartIMGClick(Sender: TObject);
 
@@ -170,6 +173,25 @@ begin
   DBtxtquest.Refresh;
   is_clicked:=false;
     end;
+end;
+
+procedure TForm1.MouseEnter(vars: Tlabel);
+begin
+     Vars.Font.Color:=	$AACD66;
+end;
+procedure TForm1.MouseLeave(vars: Tlabel);
+begin
+     Vars.Font.Color:=clWhite;
+end;
+
+procedure TForm1.MouseLeave(Sender: TObject);
+begin
+
+end;
+
+procedure TForm1.MouseEnter(Sender: TObject);
+begin
+
 end;
 
 
