@@ -13,9 +13,9 @@ type
 { TForm1 }
 
 TForm1 = class(TForm)
-		  DataSource1: TDataSource;
-		  DBGrid1: TDBGrid;
-		  Rbvar1: TLabel;
+  DataSource1: TDataSource;
+  DBGrid1: TDBGrid;
+  Rbvar1: TLabel;
   QueryQuest: TSQLQuery;
   Qryforid: TSQLQuery;
   MSSQLConnection1: TMSSQLConnection;
@@ -38,8 +38,7 @@ TForm1 = class(TForm)
   Admbutt: TPanel;
   Wiki: TPanel;
   procedure AdmbuttClick(Sender: TObject);
-  procedure DBNavigator1Click(Sender: TObject;
-    Button: TDBNavButtonType);
+  procedure DBNavigator1Click(Sender: TObject; Button: TDBNavButtonType);
   procedure foradmClick(Sender: TObject);
   procedure FormActivate(Sender: TObject);
   procedure FormCreate(Sender: TObject);
@@ -71,7 +70,7 @@ var
 Form1: TForm1;
 mass_label_id: array [1..3] of string;
 first_quest: boolean;
-is_clicked:boolean;
+is_clicked: boolean;
 
 implementation
 
@@ -81,53 +80,54 @@ implementation
 procedure Tform1.printnextquest(isfirst: boolean = False);
 var
   iLabel: integer;
-  next_quest_id:string;
+  next_quest_id: string;
 begin
-  if (not isfirst)and (not QueryQuest.EOF) then begin
+  if (not isfirst) and (not QueryQuest.EOF) then
+    begin
     Qryforid.Active := True;
-    next_quest_id:= Qryforid.FieldByName('Next_quest_id').AsString
-
-  end
-  else if (isfirst) then begin
-      next_quest_id:=QueryQuest.FieldByName('quest_id').Value;
-  end;
-  if (next_quest_id<>'') then
-    begin
-
-  qryTestSkate.Filtered := False;
-  qryTestSkate.Filter := 'quest_id="' + next_quest_id + '"';
-  qryTestSkate.Filtered := True;
-  qryTestSkate.First;
-  iLabel := 1;
-  while (not qryTestSkate.EOF) do
-    begin
-    case iLabel of
-      1 : Rbvar1.Caption := qryTestSkate.FieldByName('Text').Value;
-
-      2 : Rbvar2.Caption := qryTestSkate.FieldByName('Text').Value;
-      3 : Rbvar3.Caption := qryTestSkate.FieldByName('Text').Value;
-      end;
-    mass_label_id[iLabel] := qryTestSkate.FieldByName('Answer_Id').AsString;
-    Inc(iLabel);
-    qryTestSkate.Next;
-    end;
+    next_quest_id := Qryforid.FieldByName('Next_quest_id').AsString;
 
     end
-    else
+  else if (isfirst) then
+      begin
+      next_quest_id := QueryQuest.FieldByName('quest_id').Value;
+      end;
+  if (next_quest_id <> '') then
     begin
 
+    qryTestSkate.Filtered := False;
+    qryTestSkate.Filter := 'quest_id="' + next_quest_id + '"';
+    qryTestSkate.Filtered := True;
+    qryTestSkate.First;
+    iLabel := 1;
+    while (not qryTestSkate.EOF) do
+      begin
+      case iLabel of
+        1 : Rbvar1.Caption := qryTestSkate.FieldByName('Text').Value;
 
-         Rbvar3.Visible := false;
-         Rbvar2.Visible := false;
-         Rbvar1.Visible := false;
-         Startimg.Visible := true;
+        2 : Rbvar2.Caption := qryTestSkate.FieldByName('Text').Value;
+        3 : Rbvar3.Caption := qryTestSkate.FieldByName('Text').Value;
+        end;
+      mass_label_id[iLabel] := qryTestSkate.FieldByName('Answer_Id').AsString;
+      Inc(iLabel);
+      qryTestSkate.Next;
+      end;
 
-         QueryQuest.Active := False;
-         qryTestSkate.Active := False;
-         Image1.Visible:=false;
-         form3.ShowModal;
+    end
+  else
+    begin
 
-         //ShowMessage('Last question');
+    Rbvar3.Visible := False;
+    Rbvar2.Visible := False;
+    Rbvar1.Visible := False;
+    Startimg.Visible := True;
+
+    QueryQuest.Active := False;
+    qryTestSkate.Active := False;
+    Image1.Visible := False;
+    form3.ShowModal;
+
+    //ShowMessage('Last question');
     end;
 end;
 
@@ -142,11 +142,11 @@ procedure TForm1.Label1Click(Sender: TObject);
 begin
   if (not is_clicked) then
     begin
-    is_clicked:=true;
-  Choosevar(mass_label_id[(Sender as tlabel).Tag]);
-  printnextquest;
-  DBtxtquest.Refresh;
-  is_clicked:=false;
+    is_clicked := True;
+    Choosevar(mass_label_id[(Sender as tlabel).Tag]);
+    printnextquest;
+    DBtxtquest.Refresh;
+    is_clicked := False;
     end;
 end;
 
@@ -155,11 +155,11 @@ procedure TForm1.Label2Click(Sender: TObject);
 begin
   if (not is_clicked) then
     begin
-    is_clicked:=true;
-  Choosevar(mass_label_id[(Sender as tlabel).Tag]);
-  printnextquest;
-  DBtxtquest.Refresh;
-  is_clicked:=false;
+    is_clicked := True;
+    Choosevar(mass_label_id[(Sender as tlabel).Tag]);
+    printnextquest;
+    DBtxtquest.Refresh;
+    is_clicked := False;
     end;
 end;
 
@@ -167,21 +167,22 @@ procedure TForm1.Label3Click(Sender: TObject);
 begin
   if (not is_clicked) then
     begin
-    is_clicked:=true;
-  Choosevar(mass_label_id[(Sender as tlabel).Tag]);
-  printnextquest;
-  DBtxtquest.Refresh;
-  is_clicked:=false;
+    is_clicked := True;
+    Choosevar(mass_label_id[(Sender as tlabel).Tag]);
+    printnextquest;
+    DBtxtquest.Refresh;
+    is_clicked := False;
     end;
 end;
 
 procedure TForm1.MouseEnter(vars: Tlabel);
 begin
-     Vars.Font.Color:=	$AACD66;
+  Vars.Font.Color := $AACD66;
 end;
+
 procedure TForm1.MouseLeave(vars: Tlabel);
 begin
-     Vars.Font.Color:=clWhite;
+  Vars.Font.Color := clWhite;
 end;
 
 procedure TForm1.MouseLeave(Sender: TObject);
@@ -198,13 +199,13 @@ end;
 
 procedure TForm1.StartIMGClick(Sender: TObject);
 begin
-  is_clicked:=false;
+  is_clicked := False;
   first_quest := True;
   Rbvar3.Visible := True;
   Rbvar2.Visible := True;
   Rbvar1.Visible := True;
   Startimg.Visible := False;
-  Wiki.Enabled:=true;
+  Wiki.Enabled := True;
 
   QueryQuest.Active := False;
   QueryQuest.SQL.Clear;
@@ -215,7 +216,7 @@ begin
   qryTestSkate.SQL.Clear;
   qryTestSkate.SQL.Add('select * from dbo.test_quest_skate');
   qryTestSkate.Active := True;
-  DBtxtquest.DataField:='Description';
+  DBtxtquest.DataField := 'Description';
   printnextquest(True);
   Image1.Visible := True;
 
@@ -230,7 +231,8 @@ var
   sql_text_cond: string;
 begin
 
-  sql_text := 'select Quest_id,Selection,Next_quest_id from Answers where Answer_id=''' + var_id + '''';
+  sql_text := 'select Quest_id,Selection,Next_quest_id from Answers where Answer_id=''' +
+    var_id + '''';
   Qryforid.sql.Text := sql_text;
 
   Qryforid.Active := True;
@@ -247,7 +249,8 @@ begin
       begin
       sql_text_cond := sql_text_cond + ' And ';
       end
-    else begin
+    else
+      begin
       first_quest := False;
       sql_text_cond := sql_text_cond + ' Where ';
       end;
@@ -281,7 +284,7 @@ end;
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
-     Wiki.Enabled:=false;
+  Wiki.Enabled := False;
 end;
 
 procedure TForm1.GroupBox2Click(Sender: TObject);
@@ -308,4 +311,3 @@ end;
 
 
 end.
-

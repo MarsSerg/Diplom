@@ -1,13 +1,12 @@
 object Form3: TForm3
-  Left = 414
+  Left = 519
   Height = 537
-  Top = 109
+  Top = 99
   Width = 814
   BorderStyle = bsToolWindow
   Caption = 'Form3'
   ClientHeight = 537
   ClientWidth = 814
-  OnActivate = FormActivate
   OnCreate = FormCreate
   OnShow = FormShow
   LCLVersion = '1.2.4.0'
@@ -26,7 +25,6 @@ object Form3: TForm3
       Height = 544
       Top = -16
       Width = 834
-      OnClick = Image7Click
       Picture.Data = {
         0A544A706567496D61676560270400FFD8FFE11D424578696600004D4D002A00
         0000080007011200030000000100010000011A00050000000100000062011B00
@@ -18119,5 +18117,12 @@ object Form3: TForm3
   end
   object DataSource1: TDataSource
     left = 120
+  end
+  object qryonepage: TSQLQuery
+    FieldDefs = <>
+    Database = Form1.MSSQLConnection1
+    Transaction = Form1.SQLTransaction1
+    Params = <>
+    left = 160
   end
 end

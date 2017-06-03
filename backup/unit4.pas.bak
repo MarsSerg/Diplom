@@ -5,7 +5,7 @@ unit Unit4;
 interface
 
 uses
-Classes, SysUtils, FileUtil, Forms, Controls, Graphics,
+Classes, SysUtils, sqldb, FileUtil, Forms, Controls, Graphics,
 Dialogs, StdCtrls, ExtCtrls;
 
 type
@@ -15,9 +15,15 @@ type
 TForm4 = class(TForm)
   Grpparts: TGroupBox;
   LblDescription: TLabel;
+  Lbllength1: TLabel;
+  Lblnose1: TLabel;
   Lblstyles: TLabel;
+  Lbltail1: TLabel;
   Lbltrcks: TLabel;
   Lbltrsize1: TLabel;
+  Lblwhhrd1: TLabel;
+  Lblwhlbs1: TLabel;
+  Lblwhsize: TLabel;
   Lblbrname: TLabel;
   Lblmdof: TLabel;
   Lblwhhrd: TLabel;
@@ -25,6 +31,8 @@ TForm4 = class(TForm)
   Lbltrsize: TLabel;
   Lbltrtype: TLabel;
   Lblbr: TLabel;
+  Lblwhsize1: TLabel;
+  Lblwidth1: TLabel;
   Parts: TLabel;
   Grparam: TGroupBox;
   grride: TGroupBox;
