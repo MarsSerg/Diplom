@@ -258,7 +258,9 @@ begin
 
     Form3.Qryinfo.SQL.Text := sql_text_cond;
     Form3.Qryinfo.Active := True;
-    end;
+    end
+    else
+        showmessage('1');
 end;
 
 procedure TForm1.OkPanelClick(Sender: TObject);

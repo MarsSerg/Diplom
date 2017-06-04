@@ -125,6 +125,7 @@ begin
     QueryQuest.Active := False;
     qryTestSkate.Active := False;
     Image1.Visible := False;
+    FORM3.Qryinfo.first;
     form3.ShowModal;
 
     //ShowMessage('Last question');
@@ -258,7 +259,9 @@ begin
 
     Form3.Qryinfo.SQL.Text := sql_text_cond;
     Form3.Qryinfo.Active := True;
-    end;
+    end
+    else
+        showmessage('1');
 end;
 
 procedure TForm1.OkPanelClick(Sender: TObject);

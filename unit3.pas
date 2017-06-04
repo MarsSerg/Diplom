@@ -59,7 +59,7 @@ var
 Form3: TForm3;
 recstatus: integer;
 mass_skate_id: array [1..3] of integer;
-
+roll_direction:boolean;
 
 implementation
 
@@ -118,24 +118,18 @@ end;
 
 
 procedure TForm3.PnlNextClick(Sender: TObject);
-label
-  first_img;
 begin
   if (not qryinfo.Active) then
     qryinfo.Active := True;
   if (not qryinfo.EOF) then
-    first_img:
-
-      for recstatus := 1 to 3 do
+      for recstatus:=1 to 3 do
         begin
         qryinfo.Next;
-        if (not qryinfo.EOF) then
-          loadinfo
-        else
+        if (qryinfo.EOF) then
           begin
           qryinfo.First;
-          goto first_img;
           end;
+        loadinfo;
         end;
 
 end;
@@ -143,6 +137,7 @@ end;
 procedure TForm3.FormCreate(Sender: TObject);
 begin
   recstatus := 0;
+  roll_direction:=true;
   if (recstatus = 0) then
     begin
     qryinfo.Active := False;

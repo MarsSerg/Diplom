@@ -5,8 +5,8 @@ unit Unit2;
 interface
 
 uses
-Classes, SysUtils, FileUtil, Forms, Controls, Graphics,
-Dialogs, StdCtrls, ExtCtrls;
+Classes, SysUtils, sqldb, db, FileUtil, Forms, Controls, Graphics,
+Dialogs, StdCtrls, ExtCtrls, DbCtrls;
 
 type
 
@@ -15,9 +15,12 @@ type
 TForm2 = class(TForm)
   Bearings: TLabel;
   Boardstyle: TLabel;
+  dsBoardStyle: TDataSource;
+  lcmbBoardStyle: TDBLookupComboBox;
+  dsAdminSkate: TDataSource;
   Fordescr: TEdit;
   Lblname: TLabel;
-  Chkgrrdstl: TCheckGroup;
+  chkRidingStyles: TCheckGroup;
   Forname: TEdit;
   forbrdstl: TComboBox;
   forbrng: TComboBox;
@@ -31,8 +34,12 @@ TForm2 = class(TForm)
   OpenDialog2: TOpenDialog;
   Panel1: TPanel;
   Ridingstyle: TLabel;
+  qryAdminSkate: TSQLQuery;
+  qryBoardStyle: TSQLQuery;
   Tracks: TLabel;
   Wheels: TLabel;
+  procedure FormCreate(Sender: TObject);
+  procedure FormShow(Sender: TObject);
   procedure ImgloadClick(Sender: TObject);
 private
   { private declarations }
@@ -42,7 +49,7 @@ end;
 
 var
 Form2: TForm2;
-
+strRidingStyles:TStringList;
 implementation
 
 {$R *.lfm}
@@ -60,6 +67,41 @@ begin
       else
         ShowMessage('Прочие ошибки: ' + #13 + Exception(ExceptObject).Message);
       end;
+end;
+
+procedure TForm2.FormShow(Sender: TObject);
+var
+   txtSql:string;
+   txtElement:string;
+
+begin
+   qryAdminSkate.Active:=false;
+
+   //загрузка Riding_style
+   txtSql:='select Ridingstyle_id,ridingstyle from Riding_Style';
+   qryAdminSkate.SQL.Text:=txtSql;
+   qryAdminSkate.Active:=true;
+
+
+   strRidingStyles.Clear;
+   chkRidingStyles.Items.Clear;
+   while (not qryAdminSkate.EOF) do begin
+         txtElement:=qryAdminSkate.FieldByName('Ridingstyle_id').AsString;
+         strRidingStyles.Add(txtElement);
+         txtElement:=qryAdminSkate.FieldByName('Ridingstyle').AsString;
+         chkRidingStyles.Items.Add(txtElement);
+         qryAdminSkate.Next;
+   end;
+   qryAdminSkate.Active:=false;
+
+   qryBoardStyle.Active:=true;
+   lcmbBoardStyle.Refresh ;
+
+end;
+
+procedure TForm2.FormCreate(Sender: TObject);
+begin
+     strRidingStyles:=TStringList.Create;
 end;
 
 

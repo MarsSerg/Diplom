@@ -1,12 +1,14 @@
 object Form2: TForm2
-  Left = 754
+  Left = 468
   Height = 500
-  Top = 290
-  Width = 659
+  Top = 43
+  Width = 657
   BorderStyle = bsToolWindow
   Caption = 'Form2'
   ClientHeight = 500
-  ClientWidth = 659
+  ClientWidth = 657
+  OnCreate = FormCreate
+  OnShow = FormShow
   LCLVersion = '1.2.4.0'
   object GroupBox2: TGroupBox
     Left = 0
@@ -90,7 +92,7 @@ object Form2: TForm2
     object Ridingstyle: TLabel
       Left = 200
       Height = 24
-      Top = 256
+      Top = 232
       Width = 121
       Caption = 'Riding style'
       Font.CharSet = ANSI_CHARSET
@@ -148,11 +150,11 @@ object Form2: TForm2
       OnClick = ImgloadClick
     end
     object Panel1: TPanel
-      Left = 176
+      Left = 200
       Height = 34
       Top = 440
       Width = 168
-      Caption = 'Panel1'
+      Caption = 'Save'
       TabOrder = 5
     end
     object Forname: TEdit
@@ -162,10 +164,10 @@ object Form2: TForm2
       Width = 128
       TabOrder = 6
     end
-    object Chkgrrdstl: TCheckGroup
+    object chkRidingStyles: TCheckGroup
       Left = 200
-      Height = 136
-      Top = 288
+      Height = 168
+      Top = 256
       Width = 233
       AutoFill = True
       ChildSizing.LeftRightSpacing = 6
@@ -205,8 +207,8 @@ object Form2: TForm2
       Left = 208
       Height = 24
       Top = 8
-      Width = 56
-      Caption = 'Name'
+      Width = 111
+      Caption = 'Desciption'
       Font.CharSet = ANSI_CHARSET
       Font.Height = -21
       Font.Name = 'Bauhaus 93'
@@ -216,9 +218,56 @@ object Form2: TForm2
       ParentColor = False
       ParentFont = False
     end
+    object lcmbBoardStyle: TDBLookupComboBox
+      Left = 17
+      Height = 23
+      Top = 376
+      Width = 150
+      DataSource = dsBoardStyle
+      KeyField = 'Boardstyle_id'
+      ListField = 'Boardstyle_id'
+      ListFieldIndex = 0
+      ListSource = dsBoardStyle
+      LookupCache = False
+      ScrollListDataset = True
+      TabOrder = 9
+    end
   end
   object OpenDialog2: TOpenDialog
-    left = 400
-    top = 8
+    left = 408
+    top = 16
+  end
+  object qryAdminSkate: TSQLQuery
+    FieldDefs = <>
+    Database = Form1.MSSQLConnection1
+    Transaction = Form1.SQLTransaction1
+    Params = <>
+    left = 40
+    top = 440
+  end
+  object dsAdminSkate: TDataSource
+    DataSet = qryAdminSkate
+    left = 120
+    top = 440
+  end
+  object dsBoardStyle: TDataSource
+    DataSet = qryBoardStyle
+    left = 500
+    top = 430
+  end
+  object qryBoardStyle: TSQLQuery
+    FieldDefs = <>
+    Database = Form1.MSSQLConnection1
+    Transaction = Form1.SQLTransaction1
+    SQL.Strings = (
+      'SELECT [Boardstyle_ID]'
+      '      ,[Length]'
+      '      ,[Width]'
+      '      ,[Type_of_deck]'
+      '  FROM [Boardstyle]'
+    )
+    Params = <>
+    left = 588
+    top = 432
   end
 end

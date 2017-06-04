@@ -1,5 +1,5 @@
 object Form3: TForm3
-  Left = 389
+  Left = 519
   Height = 537
   Top = 99
   Width = 814
@@ -18062,7 +18062,7 @@ object Form3: TForm3
       end
     end
     object PnlNext: TPanel
-      Left = 320
+      Left = 440
       Height = 34
       Top = 480
       Width = 160
