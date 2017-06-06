@@ -25559,7 +25559,6 @@ object Form1: TForm1
       ParentColor = False
       TabOrder = 0
       Visible = False
-      OnClick = foradmClick
       object Forlogin: TLabel
         Left = 8
         Height = 24

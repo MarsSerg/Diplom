@@ -39,24 +39,24 @@ TForm1 = class(TForm)
   Wiki: TPanel;
   procedure AdmbuttClick(Sender: TObject);
   procedure DBNavigator1Click(Sender: TObject; Button: TDBNavButtonType);
-  procedure foradmClick(Sender: TObject);
-  procedure FormActivate(Sender: TObject);
+
+
   procedure FormCreate(Sender: TObject);
-  procedure GroupBox2Click(Sender: TObject);
+
 
 
   procedure Label1Click(Sender: TObject);
   procedure Label2Click(Sender: TObject);
   procedure Label3Click(Sender: TObject);
   procedure MouseEnter(vars: Tlabel);
-  procedure MouseEnter(Sender: TObject);
+
   procedure MouseLeave(vars: Tlabel);
-  procedure MouseLeave(Sender: TObject);
+
 
   procedure StartIMGClick(Sender: TObject);
 
   procedure OkPanelClick(Sender: TObject);
-  procedure Panel2Click(Sender: TObject);
+
   procedure printnextquest(isfirst: boolean = False);
   procedure WikiClick(Sender: TObject);
   procedure Choosevar(var_id: string);
@@ -86,7 +86,6 @@ begin
     begin
     Qryforid.Active := True;
     next_quest_id := Qryforid.FieldByName('Next_quest_id').AsString;
-
     end
   else if (isfirst) then
       begin
@@ -94,12 +93,11 @@ begin
       end;
   if (next_quest_id <> '') then
     begin
-
-    qryTestSkate.Filtered := False;
-    qryTestSkate.Filter := 'quest_id="' + next_quest_id + '"';
-    qryTestSkate.Filtered := True;
-    qryTestSkate.First;
-    iLabel := 1;
+     qryTestSkate.Filtered := False;
+     qryTestSkate.Filter := 'quest_id="' + next_quest_id + '"';
+     qryTestSkate.Filtered := True;
+     qryTestSkate.First;
+     iLabel := 1;
     while (not qryTestSkate.EOF) do
       begin
       case iLabel of
@@ -107,27 +105,24 @@ begin
 
         2 : Rbvar2.Caption := qryTestSkate.FieldByName('Text').Value;
         3 : Rbvar3.Caption := qryTestSkate.FieldByName('Text').Value;
-        end;
-      mass_label_id[iLabel] := qryTestSkate.FieldByName('Answer_Id').AsString;
-      Inc(iLabel);
-      qryTestSkate.Next;
       end;
-
+       mass_label_id[iLabel] := qryTestSkate.FieldByName('Answer_Id').AsString;
+       Inc(iLabel);
+       qryTestSkate.Next;
+      end;
     end
   else
     begin
-
-    Rbvar3.Visible := False;
-    Rbvar2.Visible := False;
-    Rbvar1.Visible := False;
-    Startimg.Visible := True;
-
-    QueryQuest.Active := False;
-    qryTestSkate.Active := False;
-    Image1.Visible := False;
-    form3.ShowModal;
-
-    //ShowMessage('Last question');
+      Rbvar3.Visible := False;
+      Rbvar2.Visible := False;
+      Rbvar1.Visible := False;
+      Startimg.Visible := True;
+      QueryQuest.Active := False;
+      qryTestSkate.Active := False;
+      Image1.Visible := False;
+      FORM3.Qryinfo.First;
+      form3.ShowModal;
+      //ShowMessage('Last question');
     end;
 end;
 
@@ -185,18 +180,6 @@ begin
   Vars.Font.Color := clWhite;
 end;
 
-procedure TForm1.MouseLeave(Sender: TObject);
-begin
-
-end;
-
-procedure TForm1.MouseEnter(Sender: TObject);
-begin
-
-end;
-
-
-
 procedure TForm1.StartIMGClick(Sender: TObject);
 begin
   is_clicked := False;
@@ -230,20 +213,16 @@ var
   sql_text: string;
   sql_text_cond: string;
 begin
-
   sql_text := 'select Quest_id,Selection,Next_quest_id from Answers where Answer_id=''' +
-    var_id + '''';
+  var_id + '''';
   Qryforid.sql.Text := sql_text;
-
   Qryforid.Active := True;
-
   cond := Qryforid.FieldByName('Selection').AsString;
   Qryforid.Active := False;
 
   if cond <> '' then
     begin
     sql_text_cond := form3.qryinfo.SQL.Text;
-
     Form3.Qryinfo.Active := False;
     if (not first_quest) then
       begin
@@ -255,33 +234,16 @@ begin
       sql_text_cond := sql_text_cond + ' Where ';
       end;
     sql_text_cond := sql_text_cond + cond;
-
     Form3.Qryinfo.SQL.Text := sql_text_cond;
     Form3.Qryinfo.Active := True;
     end
-    else
-        showmessage('1');
+  else
+    ShowMessage('1');
 end;
 
 procedure TForm1.OkPanelClick(Sender: TObject);
-
 begin
   Form2.ShowModal;
-end;
-
-procedure TForm1.Panel2Click(Sender: TObject);
-begin
-
-end;
-
-procedure TForm1.foradmClick(Sender: TObject);
-begin
-
-end;
-
-procedure TForm1.FormActivate(Sender: TObject);
-begin
-
 end;
 
 procedure TForm1.FormCreate(Sender: TObject);
@@ -289,10 +251,6 @@ begin
   Wiki.Enabled := False;
 end;
 
-procedure TForm1.GroupBox2Click(Sender: TObject);
-begin
-
-end;
 
 procedure TForm1.AdmbuttClick(Sender: TObject);
 begin

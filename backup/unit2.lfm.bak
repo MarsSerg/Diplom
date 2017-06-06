@@ -1,12 +1,12 @@
 object Form2: TForm2
-  Left = 468
-  Height = 500
-  Top = 43
-  Width = 657
+  Left = 358
+  Height = 498
+  Top = 115
+  Width = 771
   BorderStyle = bsToolWindow
   Caption = 'Form2'
-  ClientHeight = 500
-  ClientWidth = 657
+  ClientHeight = 498
+  ClientWidth = 771
   OnCreate = FormCreate
   OnShow = FormShow
   LCLVersion = '1.2.4.0'
@@ -35,14 +35,6 @@ object Form2: TForm2
       ParentColor = False
       ParentFont = False
     end
-    object forbrdstl: TComboBox
-      Left = 16
-      Height = 23
-      Top = 128
-      Width = 100
-      ItemHeight = 15
-      TabOrder = 0
-    end
     object Tracks: TLabel
       Left = 16
       Height = 24
@@ -57,14 +49,6 @@ object Form2: TForm2
       Font.Style = [fsBold]
       ParentColor = False
       ParentFont = False
-    end
-    object fortracks: TComboBox
-      Left = 16
-      Height = 23
-      Top = 193
-      Width = 100
-      ItemHeight = 15
-      TabOrder = 1
     end
     object Wheels: TLabel
       Left = 16
@@ -81,14 +65,6 @@ object Form2: TForm2
       ParentColor = False
       ParentFont = False
     end
-    object forwheels: TComboBox
-      Left = 16
-      Height = 23
-      Top = 264
-      Width = 100
-      ItemHeight = 15
-      TabOrder = 2
-    end
     object Ridingstyle: TLabel
       Left = 200
       Height = 24
@@ -103,14 +79,6 @@ object Form2: TForm2
       Font.Style = [fsBold]
       ParentColor = False
       ParentFont = False
-    end
-    object forbrng: TComboBox
-      Left = 17
-      Height = 23
-      Top = 336
-      Width = 100
-      ItemHeight = 15
-      TabOrder = 3
     end
     object Bearings: TLabel
       Left = 17
@@ -146,29 +114,31 @@ object Form2: TForm2
       Font.Quality = fqDraft
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 4
+      TabOrder = 0
       OnClick = ImgloadClick
     end
     object Panel1: TPanel
-      Left = 200
+      Left = 480
       Height = 34
       Top = 440
       Width = 168
       Caption = 'Save'
-      TabOrder = 5
+      TabOrder = 1
+      OnClick = Panel1Click
     end
     object Forname: TEdit
       Left = 16
       Height = 23
       Top = 40
       Width = 128
-      TabOrder = 6
+      MaxLength = 10
+      TabOrder = 2
     end
     object chkRidingStyles: TCheckGroup
       Left = 200
-      Height = 168
+      Height = 224
       Top = 256
-      Width = 233
+      Width = 145
       AutoFill = True
       ChildSizing.LeftRightSpacing = 6
       ChildSizing.TopBottomSpacing = 6
@@ -178,7 +148,7 @@ object Form2: TForm2
       ChildSizing.ShrinkVertical = crsScaleChilds
       ChildSizing.Layout = cclLeftToRightThenTopToBottom
       ChildSizing.ControlsPerLine = 1
-      TabOrder = 7
+      TabOrder = 3
     end
     object Lblname: TLabel
       Left = 17
@@ -201,7 +171,7 @@ object Form2: TForm2
       Top = 40
       Width = 240
       AutoSize = False
-      TabOrder = 8
+      TabOrder = 4
     end
     object Lblname1: TLabel
       Left = 208
@@ -221,17 +191,71 @@ object Form2: TForm2
     object lcmbBoardStyle: TDBLookupComboBox
       Left = 17
       Height = 23
-      Top = 376
+      Top = 128
       Width = 150
+      DataField = 'Boardstyle_ID'
       DataSource = dsBoardStyle
-      KeyField = 'Boardstyle_id'
-      ListField = 'Boardstyle_id'
+      KeyField = 'Boardstyle_ID'
+      ListField = 'Description'
       ListFieldIndex = 0
       ListSource = dsBoardStyle
       LookupCache = False
       ScrollListDataset = True
-      TabOrder = 9
+      TabOrder = 5
     end
+    object lcmbTracks: TDBLookupComboBox
+      Left = 17
+      Height = 23
+      Top = 192
+      Width = 150
+      DataField = 'Tracks_ID'
+      DataSource = dsTracks
+      KeyField = 'Tracks_ID'
+      ListField = 'Description'
+      ListFieldIndex = 0
+      ListSource = dsTracks
+      LookupCache = False
+      ScrollListDataset = True
+      TabOrder = 6
+    end
+    object lcmbWheels: TDBLookupComboBox
+      Left = 16
+      Height = 23
+      Top = 264
+      Width = 150
+      DataField = 'Wheels_ID'
+      DataSource = dsWheels
+      KeyField = 'Wheels_ID'
+      ListField = 'Description'
+      ListFieldIndex = 0
+      ListSource = dsWheels
+      LookupCache = False
+      ScrollListDataset = True
+      TabOrder = 7
+    end
+    object Lblpath: TLabel
+      Left = 448
+      Height = 15
+      Top = 400
+      Width = 40
+      Caption = 'Lblpath'
+      ParentColor = False
+    end
+  end
+  object lcmbBearings: TDBLookupComboBox
+    Left = 17
+    Height = 23
+    Top = 352
+    Width = 150
+    DataField = 'Bearings_ID'
+    DataSource = dsBear
+    KeyField = 'Bearings_ID'
+    ListField = 'Name'
+    ListFieldIndex = 0
+    ListSource = dsBear
+    LookupCache = False
+    ScrollListDataset = True
+    TabOrder = 1
   end
   object OpenDialog2: TOpenDialog
     left = 408
@@ -242,32 +266,96 @@ object Form2: TForm2
     Database = Form1.MSSQLConnection1
     Transaction = Form1.SQLTransaction1
     Params = <>
-    left = 40
-    top = 440
+    left = 664
+    top = 120
   end
   object dsAdminSkate: TDataSource
     DataSet = qryAdminSkate
-    left = 120
-    top = 440
+    left = 728
+    top = 120
   end
   object dsBoardStyle: TDataSource
     DataSet = qryBoardStyle
-    left = 500
-    top = 430
+    left = 731
   end
   object qryBoardStyle: TSQLQuery
     FieldDefs = <>
     Database = Form1.MSSQLConnection1
     Transaction = Form1.SQLTransaction1
     SQL.Strings = (
-      'SELECT [Boardstyle_ID]'
-      '      ,[Length]'
-      '      ,[Width]'
-      '      ,[Type_of_deck]'
+      'SELECT [Boardstyle_ID],'
+      '       [Description]'
       '  FROM [Boardstyle]'
     )
     Params = <>
-    left = 588
-    top = 432
+    left = 664
+  end
+  object dsTracks: TDataSource
+    DataSet = qryTracks
+    left = 728
+    top = 64
+  end
+  object qryTracks: TSQLQuery
+    FieldDefs = <>
+    Database = Form1.MSSQLConnection1
+    Transaction = Form1.SQLTransaction1
+    SQL.Strings = (
+      'SELECT [Tracks_ID]'
+      '      ,[Description]'
+      '  FROM [Tracks]'
+    )
+    Params = <>
+    left = 664
+    top = 56
+  end
+  object qryWheels: TSQLQuery
+    FieldDefs = <>
+    Database = Form1.MSSQLConnection1
+    Transaction = Form1.SQLTransaction1
+    SQL.Strings = (
+      'SELECT [Wheels_ID]'
+      '      ,[Description]'
+      '  FROM [Wheels]'
+    )
+    Params = <>
+    left = 664
+    top = 184
+  end
+  object dsWheels: TDataSource
+    DataSet = qryWheels
+    left = 728
+    top = 184
+  end
+  object qryBear: TSQLQuery
+    FieldDefs = <>
+    Database = Form1.MSSQLConnection1
+    Transaction = Form1.SQLTransaction1
+    SQL.Strings = (
+      'SELECT [Bearings_ID]'
+      '      ,[Name]'
+      '  FROM [Bearings]'
+    )
+    Params = <>
+    left = 664
+    top = 248
+  end
+  object dsBear: TDataSource
+    DataSet = qryBear
+    left = 728
+    top = 248
+  end
+  object qryadd: TSQLQuery
+    FieldDefs = <>
+    Database = Form1.MSSQLConnection1
+    Transaction = Form1.SQLTransaction1
+    Params = <>
+    left = 664
+    top = 304
+  end
+  object qryaddrdstl: TSQLQuery
+    FieldDefs = <>
+    Params = <>
+    left = 728
+    top = 304
   end
 end
