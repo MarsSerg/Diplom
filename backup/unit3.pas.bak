@@ -45,12 +45,13 @@ TForm3 = class(TForm)
   procedure Formopen(curlabel: Tlabel);
   procedure PnlNextClick(Sender: TObject);
   procedure LoadPicture(img: TImage);
-
+  procedure MouseEnter(vars: Tlabel);
+  procedure MouseLeave(vars: Tlabel);
 private
   { private declarations }
 public
   { public declarations }
-  function GetIsNullValue(q1: TSQLQuery; fieldname: string): string;
+
 
   procedure LoadInfo;
 end;
@@ -61,13 +62,11 @@ recstatus: integer;
 mass_skate_id: array [1..3] of integer;
 roll_direction: boolean;
 
+
 implementation
 
 {$R *.lfm}
-function TForm3.GetIsNullValue(q1: TSQLQuery; fieldname: string): string;
-begin
 
-end;
 
 procedure Tform3.LoadPicture(img: TImage);
 var
@@ -91,6 +90,8 @@ begin
       lbldskr1.Caption := qryinfo.FieldByName('Description').AsString;
       Brdname1.Caption := qryinfo.FieldByName('Skate_Name').AsString;
       LoadPicture(Image1);
+      Image1.Stretch:=true;
+      Image1.Proportional:=false;
       mass_skate_id[counter] := qryinfo.FieldByName('Skate_id').AsInteger;
       Lblabout.Tag := mass_skate_id[counter];
       Inc(counter);
@@ -100,6 +101,8 @@ begin
       lbldskr2.Caption := qryinfo.FieldByName('Description').AsString;
       Brdname2.Caption := qryinfo.FieldByName('Skate_Name').AsString;
       LoadPicture(Image2);
+       Image2.Stretch:=true;
+      Image2.Proportional:=false;
       mass_skate_id[counter] := qryinfo.FieldByName('Skate_id').AsInteger;
       Lblabout1.Tag := mass_skate_id[counter];
       Inc(counter);
@@ -109,6 +112,8 @@ begin
       lbldskr3.Caption := qryinfo.FieldByName('description').AsString;
       Brdname3.Caption := qryinfo.FieldByName('Skate_Name').AsString;
       LoadPicture(Image3);
+       Image3.Stretch:=true;
+      Image3.Proportional:=false;
       mass_skate_id[counter] := qryinfo.FieldByName('Skate_id').AsInteger;
       Lblabout2.Tag := mass_skate_id[counter];
       end;
@@ -116,6 +121,15 @@ begin
 
 end;
 
+procedure TForm3.MouseEnter(vars: Tlabel);
+begin
+  Vars.Font.Color := clRed;
+end;
+
+procedure TForm3.MouseLeave(vars: Tlabel);
+begin
+  Vars.Font.Color := clSkyBlue;
+end;
 
 procedure TForm3.PnlNextClick(Sender: TObject);
 begin
@@ -141,18 +155,6 @@ begin
   if (recstatus = 0) then
     begin
     qryinfo.Active := False;
-    //qryinfo.SQL.Clear;
-    //qryinfo.SQL.Add('Exec dbo.Skates');
-    //       qryinfo.Active:=true;
-    //       inc(recstatus);
-    //       loadinfo;
-
-    //       for recstatus:=2 to 3 do begin
-    //           qryinfo.Next;
-    //           if (not qryinfo.eof) then
-    //              loadinfo;
-    //end;
-
     end;
 end;
 
@@ -171,25 +173,15 @@ begin
   qryonepage.Active := True;
   Form4.Name_of_deck.Caption := qryonepage.FieldByName('Skate_name').AsString;
   img := qryonepage.FieldByName('Picture').AsString;
-  ;
   Form4.Image1.Picture.LoadFromFile(img);
+  Form4.Image1.Stretch:=true;
+  Form4.Image1.Proportional:=false;
   Form4.LblDescription.Caption := qryonepage.FieldByName('Description').AsString;
-  str := Form4.LblDescription.Caption;
-  s1 := '';
-  for i := 1 to length(str) do
-    begin
-    s1 := s1 + str[i];
-    if Form4.LblDescription.canvas.TextWidth(s1) >= Form4.Grpdskr.Width then
-      begin
-      Form4.LblDescription.Caption := Form4.LblDescription.Caption + s1 + ' ';
-      s1 := '';
-      end;
-    end;
   Form4.Lblstyles.Caption := qryonepage.FieldByName('Styles').AsString;
   Form4.Lblnose.Caption :=
-    Form4.Lblnose.Caption + '      -     ' + qryonepage.FieldByName('Nose').AsString;
+  Form4.Lblnose.Caption + '      -     ' + qryonepage.FieldByName('Nose').AsString;
   Form4.Lbltail.Caption :=
-    Form4.Lbltail.Caption + '      -     ' + qryonepage.FieldByName('Tale').AsString;
+  Form4.Lbltail.Caption + '      -     ' + qryonepage.FieldByName('Tale').AsString;
   Form4.Lblwidth.Caption := '      -     ' + qryonepage.FieldByName('Width').AsString;
   Form4.Lbllength.Caption := '      -     ' + qryonepage.FieldByName('Length').AsString;
   Form4.Lbldcktp.Caption :=
@@ -210,6 +202,8 @@ begin
 
   form4.showmodal;
 end;
+
+
 
 procedure TForm3.FormShow(Sender: TObject);
 begin

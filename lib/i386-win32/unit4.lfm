@@ -1,7 +1,7 @@
 object Form4: TForm4
-  Left = 258
+  Left = 302
   Height = 610
-  Top = 561
+  Top = 79
   Width = 895
   BorderStyle = bsToolWindow
   Caption = 'Form4'
@@ -25,7 +25,7 @@ object Form4: TForm4
       Width = 211
     end
     object Image2: TImage
-      Left = -2
+      Left = -1
       Height = 616
       Top = -16
       Width = 896
@@ -12487,7 +12487,7 @@ object Form4: TForm4
     object Description: TLabel
       Left = 264
       Height = 21
-      Top = 80
+      Top = 72
       Width = 110
       Caption = 'Description'
       Font.CharSet = ANSI_CHARSET
@@ -12501,34 +12501,38 @@ object Form4: TForm4
       ParentFont = False
     end
     object Grpdskr: TGroupBox
-      Left = 265
-      Height = 112
-      Top = 104
-      Width = 272
-      ClientHeight = 94
-      ClientWidth = 268
+      Left = 264
+      Height = 160
+      Top = 96
+      Width = 279
+      ClientHeight = 142
+      ClientWidth = 275
       TabOrder = 0
-      object LblDescription: TLabel
-        Left = 2
-        Height = 18
+      object LblDescription: TMemo
+        Left = 0
+        Height = 138
         Top = 0
-        Width = 83
-        Caption = 'Description'
+        Width = 272
+        Color = clMaroon
         Font.CharSet = ANSI_CHARSET
         Font.Color = clWhite
         Font.Height = -16
-        Font.Name = 'Bauhaus 93'
+        Font.Name = 'Calibri'
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
-        ParentColor = False
+        Font.Style = [fsBold, fsItalic]
+        Lines.Strings = (
+          'LblDescription'
+        )
         ParentFont = False
-        WordWrap = True
+        ReadOnly = True
+        TabOrder = 0
       end
     end
     object Riding_styles: TLabel
-      Left = 600
+      Left = 592
       Height = 21
-      Top = 80
+      Top = 136
       Width = 120
       Caption = 'Riding styles'
       Font.CharSet = ANSI_CHARSET
@@ -12542,11 +12546,11 @@ object Form4: TForm4
       ParentFont = False
     end
     object grride: TGroupBox
-      Left = 600
-      Height = 112
-      Top = 104
+      Left = 592
+      Height = 48
+      Top = 160
       Width = 272
-      ClientHeight = 94
+      ClientHeight = 30
       ClientWidth = 268
       TabOrder = 1
       object Lblstyles: TLabel
@@ -12566,9 +12570,9 @@ object Form4: TForm4
       end
     end
     object Params: TLabel
-      Left = 264
+      Left = 272
       Height = 21
-      Top = 232
+      Top = 272
       Width = 72
       Caption = 'Options'
       Font.CharSet = ANSI_CHARSET
@@ -12582,9 +12586,9 @@ object Form4: TForm4
       ParentFont = False
     end
     object Grparam: TGroupBox
-      Left = 264
+      Left = 272
       Height = 202
-      Top = 256
+      Top = 296
       Width = 273
       ClientHeight = 184
       ClientWidth = 269
@@ -12753,7 +12757,7 @@ object Form4: TForm4
     object Parts: TLabel
       Left = 600
       Height = 21
-      Top = 232
+      Top = 272
       Width = 46
       Caption = 'Parts'
       Font.CharSet = ANSI_CHARSET
@@ -12769,7 +12773,7 @@ object Form4: TForm4
     object Grpparts: TGroupBox
       Left = 600
       Height = 289
-      Top = 256
+      Top = 304
       Width = 246
       ClientHeight = 271
       ClientWidth = 242

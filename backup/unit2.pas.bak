@@ -83,7 +83,8 @@ end;
 
 procedure TForm2.Panel1Click(Sender: TObject);
 var
-name_txt ,Descr_txt,Tr_id ,brd_id,wh_id,bear_id,path:string;
+i,id_board:integer;
+name_txt ,Descr_txt,Tr_id ,brd_id,wh_id,bear_id,path,rd_id:string;
 begin
    name_txt:= forname.Text;
    Descr_txt:= Fordescr.Text;
@@ -92,6 +93,12 @@ begin
    wh_id:=lcmbWheels.KeyValue;
    brd_id:=lcmbBoardStyle.KeyValue;
    path:=Lblpath.Caption;
+      qryadd.Sql.Add('Select MAX(Skate_ID) from Skateboard');
+   qryadd.Active:=True;
+   id_board:=StrToInt(qryadd.Fields[0].AsString);
+   qryadd.Active:=False;
+   qryadd.SQL.Clear;
+
    qryadd.SQL.Text:='exec dbo.AddSkate @Picture=:path, @Boardstyle_ID=:brd_id, @Tracks_ID=:tr_id, @Wheels_ID=:wh_id, @Bearings_ID=:bear_id, @Name=:name_txt, @Description=:Descr_txt';
    qryadd.ParamByName('path').AsString := path;
    qryadd.ParamByName('brd_id').AsInteger := StrToInt(brd_id) ;
@@ -101,11 +108,17 @@ begin
    qryadd.ParamByName('name_txt').AsString := name_txt;
    qryadd.ParamByName('descr_txt').AsString := Descr_txt;
    qryadd.ExecSQL;
-   tr1.Commit;
-   for i:=1 to chkRidingStyles.items.Count do begin
+
+
+   for i:=0 to (chkRidingStyles.items.Count)-1 do begin
        if (chkRidingStyles.Checked[i]) then
            begin
-
+             rd_id:=strRidingStyles[i];
+             qryaddrdstl.SQL.Text:='exec dbo.AddRdStyles @Ridingstyle_ID=:rd_id, @Skate_id=:id_board';
+             qryaddrdstl.ParamByName('rd_id').AsString :=rd_id;
+             qryaddrdstl.ParamByName('id_board').AsInteger := id_board;
+             qryaddrdstl.ExecSQL;
+             tr1.Commit;
 	   end;
    end;
 end;
@@ -122,26 +135,21 @@ begin
   txtSql := 'select Ridingstyle_id,ridingstyle from Riding_Style';
   qryAdminSkate.SQL.Text := txtSql;
   qryAdminSkate.Active := True;
-
-
   strRidingStyles.Clear;
   chkRidingStyles.Items.Clear;
   while (not qryAdminSkate.EOF) do
     begin
-    txtElement := qryAdminSkate.FieldByName('Ridingstyle_id').AsString;
-    strRidingStyles.Add(txtElement);
-    txtElement := qryAdminSkate.FieldByName('Ridingstyle').AsString;
-    chkRidingStyles.Items.Add(txtElement);
-    qryAdminSkate.Next;
+      txtElement := qryAdminSkate.FieldByName('Ridingstyle_id').AsString;
+      strRidingStyles.Add(txtElement);
+      txtElement := qryAdminSkate.FieldByName('Ridingstyle').AsString;
+      chkRidingStyles.Items.Add(txtElement);
+      qryAdminSkate.Next;
     end;
   qryAdminSkate.Active := False;
-
   qryBoardStyle.Active := True;
   qryWheels.Active := True;
   qryBear.Active := True;
   qryTracks.Active := True;
-  //lcmbBoardStyle.Refresh ;
-
 end;
 
 procedure TForm2.FormCreate(Sender: TObject);

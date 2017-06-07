@@ -15,6 +15,7 @@ type
 TForm1 = class(TForm)
   DataSource1: TDataSource;
   DBGrid1: TDBGrid;
+  Memo1: TMemo;
   Rbvar1: TLabel;
   QueryQuest: TSQLQuery;
   Qryforid: TSQLQuery;
@@ -25,7 +26,6 @@ TForm1 = class(TForm)
   SQLTransaction1: TSQLTransaction;
   DSquestion: TDataSource;
   DBtxtquest: TDBText;
-  DBNavigator1: TDBNavigator;
   Image1: TImage;
   Startimg: TImage;
   OkPanel: TPanel;
@@ -48,6 +48,7 @@ TForm1 = class(TForm)
   procedure Label1Click(Sender: TObject);
   procedure Label2Click(Sender: TObject);
   procedure Label3Click(Sender: TObject);
+
   procedure MouseEnter(vars: Tlabel);
 
   procedure MouseLeave(vars: Tlabel);
@@ -170,6 +171,8 @@ begin
     end;
 end;
 
+
+
 procedure TForm1.MouseEnter(vars: Tlabel);
 begin
   Vars.Font.Color := $AACD66;
@@ -182,6 +185,7 @@ end;
 
 procedure TForm1.StartIMGClick(Sender: TObject);
 begin
+  form3.Qryinfo.SQL.Text:=Memo1.Text;
   is_clicked := False;
   first_quest := True;
   Rbvar3.Visible := True;
@@ -189,12 +193,10 @@ begin
   Rbvar1.Visible := True;
   Startimg.Visible := False;
   Wiki.Enabled := True;
-
   QueryQuest.Active := False;
   QueryQuest.SQL.Clear;
   QueryQuest.SQL.Add('select quest_id,description from dbo.questions where quest_id=''В.1.''');
   QueryQuest.Active := True;
-
   qryTestSkate.Active := False;
   qryTestSkate.SQL.Clear;
   qryTestSkate.SQL.Add('select * from dbo.test_quest_skate');
@@ -202,7 +204,6 @@ begin
   DBtxtquest.DataField := 'Description';
   printnextquest(True);
   Image1.Visible := True;
-
 end;
 
 
@@ -219,7 +220,6 @@ begin
   Qryforid.Active := True;
   cond := Qryforid.FieldByName('Selection').AsString;
   Qryforid.Active := False;
-
   if cond <> '' then
     begin
     sql_text_cond := form3.qryinfo.SQL.Text;

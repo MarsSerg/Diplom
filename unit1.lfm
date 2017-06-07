@@ -1,12 +1,12 @@
 object Form1: TForm1
-  Left = 680
+  Left = 515
   Height = 580
-  Top = 109
+  Top = 49
   Width = 670
   BorderStyle = bsToolWindow
   Caption = 'Form1'
-  ClientHeight = 580
-  ClientWidth = 670
+  ClientHeight = 0
+  ClientWidth = 0
   LCLVersion = '1.2.4.0'
   object GroupBox1: TGroupBox
     Left = 0
@@ -25529,25 +25529,6 @@ object Form1: TForm1
       TabOrder = 2
       OnClick = WikiClick
     end
-    object DBNavigator1: TDBNavigator
-      Left = 120
-      Height = 25
-      Top = 544
-      Width = 241
-      BevelOuter = bvNone
-      ChildSizing.EnlargeHorizontal = crsScaleChilds
-      ChildSizing.EnlargeVertical = crsScaleChilds
-      ChildSizing.ShrinkHorizontal = crsScaleChilds
-      ChildSizing.ShrinkVertical = crsScaleChilds
-      ChildSizing.Layout = cclLeftToRightThenTopToBottom
-      ChildSizing.ControlsPerLine = 100
-      ClientHeight = 25
-      ClientWidth = 241
-      OnClick = DBNavigator1Click
-      Options = []
-      TabOrder = 3
-      Visible = False
-    end
     object foradm: TGroupBox
       Left = 298
       Height = 120
@@ -25710,7 +25691,37 @@ object Form1: TForm1
       Color = clWindow
       Columns = <>
       DataSource = DSquestion
+      TabOrder = 3
+    end
+    object Memo1: TMemo
+      Left = 87
+      Height = 90
+      Top = 574
+      Width = 150
+      Lines.Strings = (
+        'SELECT   distinct  '
+        's1.Name as Skate_Name, '
+        's1.Skate_ID, s1.Picture, '
+        's1.Tracks_ID, '
+        's1.Bearings_ID, s1.'
+        '[Description],'
+        ' s1.Name, s1.Wheels_ID, '
+        's1.Boardstyle_ID,'
+        '   b1.Type_of_deck'
+        '   FROM       Skateboard s1'
+        '   INNER JOIN  Boardstyle '
+        'b1 ON s1.Boardstyle_ID = '
+        'b1.Boardstyle_ID'
+        '   INNER JOIN  '
+        'Skate_Riding sr1 ON '
+        's1.Skate_ID = sr1.Skate_ID'
+        '   INNER JOIN'
+        '   Riding_Style rs1 ON '
+        'rs1.Ridingstyle_ID = '
+        'sr1.Ridingstyle_ID '
+      )
       TabOrder = 4
+      Visible = False
     end
   end
   object Qryforid: TSQLQuery

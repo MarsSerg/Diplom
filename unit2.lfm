@@ -355,6 +355,8 @@ object Form2: TForm2
   end
   object qryaddrdstl: TSQLQuery
     FieldDefs = <>
+    Database = Form1.MSSQLConnection1
+    Transaction = Form1.SQLTransaction1
     Params = <>
     left = 728
     top = 304

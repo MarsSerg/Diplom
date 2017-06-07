@@ -1,12 +1,12 @@
 object Form4: TForm4
-  Left = 354
+  Left = 302
   Height = 610
-  Top = 114
-  Width = 895
+  Top = 79
+  Width = 851
   BorderStyle = bsToolWindow
   Caption = 'Form4'
   ClientHeight = 610
-  ClientWidth = 895
+  ClientWidth = 851
   LCLVersion = '1.2.4.0'
   object Grpdeck: TGroupBox
     Left = -1
@@ -12504,25 +12504,29 @@ object Form4: TForm4
       Left = 265
       Height = 112
       Top = 104
-      Width = 272
+      Width = 279
       ClientHeight = 94
-      ClientWidth = 268
+      ClientWidth = 275
       TabOrder = 0
-      object LblDescription: TLabel
-        Left = 2
-        Height = 18
+      object LblDescription: TMemo
+        Left = 0
+        Height = 90
         Top = 0
-        Width = 83
-        Caption = 'Description'
+        Width = 272
+        Color = clMaroon
         Font.CharSet = ANSI_CHARSET
         Font.Color = clWhite
         Font.Height = -16
-        Font.Name = 'Bauhaus 93'
+        Font.Name = 'Calibri'
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
-        ParentColor = False
+        Font.Style = [fsBold, fsItalic]
+        Lines.Strings = (
+          'LblDescription'
+        )
         ParentFont = False
-        WordWrap = True
+        ReadOnly = True
+        TabOrder = 0
       end
     end
     object Riding_styles: TLabel

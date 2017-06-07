@@ -15,7 +15,6 @@ type
 TForm4 = class(TForm)
   Grpparts: TGroupBox;
   Image2: TImage;
-  LblDescription: TLabel;
   Lbllength1: TLabel;
   Lblnose1: TLabel;
   Lblstyles: TLabel;
@@ -34,6 +33,7 @@ TForm4 = class(TForm)
   Lblbr: TLabel;
   Lblwhsize1: TLabel;
   Lblwidth1: TLabel;
+  LblDescription: TMemo;
   Parts: TLabel;
   Grparam: TGroupBox;
   grride: TGroupBox;

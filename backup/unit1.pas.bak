@@ -15,6 +15,7 @@ type
 TForm1 = class(TForm)
   DataSource1: TDataSource;
   DBGrid1: TDBGrid;
+  Memo1: TMemo;
   Rbvar1: TLabel;
   QueryQuest: TSQLQuery;
   Qryforid: TSQLQuery;
@@ -25,7 +26,6 @@ TForm1 = class(TForm)
   SQLTransaction1: TSQLTransaction;
   DSquestion: TDataSource;
   DBtxtquest: TDBText;
-  DBNavigator1: TDBNavigator;
   Image1: TImage;
   Startimg: TImage;
   OkPanel: TPanel;
@@ -48,6 +48,7 @@ TForm1 = class(TForm)
   procedure Label1Click(Sender: TObject);
   procedure Label2Click(Sender: TObject);
   procedure Label3Click(Sender: TObject);
+
   procedure MouseEnter(vars: Tlabel);
 
   procedure MouseLeave(vars: Tlabel);
@@ -170,6 +171,8 @@ begin
     end;
 end;
 
+
+
 procedure TForm1.MouseEnter(vars: Tlabel);
 begin
   Vars.Font.Color := $AACD66;
@@ -182,6 +185,7 @@ end;
 
 procedure TForm1.StartIMGClick(Sender: TObject);
 begin
+  form3.Qryinfo.SQL.Text:=Memo1.Text;
   is_clicked := False;
   first_quest := True;
   Rbvar3.Visible := True;
@@ -243,6 +247,7 @@ end;
 
 procedure TForm1.OkPanelClick(Sender: TObject);
 begin
+  Unit2.tr1:=Self.SQLTransaction1;
   Form2.ShowModal;
 end;
 

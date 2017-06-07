@@ -2,11 +2,11 @@ object Form2: TForm2
   Left = 358
   Height = 498
   Top = 115
-  Width = 771
+  Width = 657
   BorderStyle = bsToolWindow
   Caption = 'Form2'
   ClientHeight = 498
-  ClientWidth = 771
+  ClientWidth = 657
   OnCreate = FormCreate
   OnShow = FormShow
   LCLVersion = '1.2.4.0'
@@ -240,6 +240,7 @@ object Form2: TForm2
       Width = 40
       Caption = 'Lblpath'
       ParentColor = False
+      Visible = False
     end
   end
   object lcmbBearings: TDBLookupComboBox
@@ -258,8 +259,8 @@ object Form2: TForm2
     TabOrder = 1
   end
   object OpenDialog2: TOpenDialog
-    left = 408
-    top = 16
+    left = 664
+    top = 360
   end
   object qryAdminSkate: TSQLQuery
     FieldDefs = <>
@@ -354,6 +355,8 @@ object Form2: TForm2
   end
   object qryaddrdstl: TSQLQuery
     FieldDefs = <>
+    Database = Form1.MSSQLConnection1
+    Transaction = Form1.SQLTransaction1
     Params = <>
     left = 728
     top = 304
