@@ -6,7 +6,7 @@ interface
 
 uses
 Classes, SysUtils, mssqlconn, sqldb, DB, FileUtil, Forms, Controls, Graphics,
-Dialogs, StdCtrls, ExtCtrls, Grids, DBCtrls, DBGrids, Unit2, Unit3;
+Dialogs, StdCtrls, ExtCtrls, Grids, DBCtrls, DBGrids, maskedit, Unit2, Unit3;
 
 type
 
@@ -15,6 +15,7 @@ type
 TForm1 = class(TForm)
   DataSource1: TDataSource;
   DBGrid1: TDBGrid;
+  Password: TEdit;
   Memo1: TMemo;
   Rbvar1: TLabel;
   QueryQuest: TSQLQuery;
@@ -30,7 +31,6 @@ TForm1 = class(TForm)
   Startimg: TImage;
   OkPanel: TPanel;
   Login: TEdit;
-  Passwod: TEdit;
   Forpassword: TLabel;
   GroupBox1: TGroupBox;
   foradm: TGroupBox;
@@ -39,28 +39,20 @@ TForm1 = class(TForm)
   Wiki: TPanel;
   procedure AdmbuttClick(Sender: TObject);
   procedure DBNavigator1Click(Sender: TObject; Button: TDBNavButtonType);
-
-
   procedure FormCreate(Sender: TObject);
-
-
-
   procedure Label1Click(Sender: TObject);
   procedure Label2Click(Sender: TObject);
   procedure Label3Click(Sender: TObject);
-
   procedure MouseEnter(vars: Tlabel);
-
   procedure MouseLeave(vars: Tlabel);
-
-
+  procedure bbMouseEnter(BB:TPanel);
+  procedure bbMouseLeave(BB:TPanel);
   procedure StartIMGClick(Sender: TObject);
-
   procedure OkPanelClick(Sender: TObject);
-
   procedure printnextquest(isfirst: boolean = False);
   procedure WikiClick(Sender: TObject);
   procedure Choosevar(var_id: string);
+
 private
   { private declarations }
 public
@@ -178,13 +170,19 @@ begin
   Vars.Font.Color := $AACD66;
 end;
 
+
+
 procedure TForm1.MouseLeave(vars: Tlabel);
 begin
-  Vars.Font.Color := clWhite;
+  Vars.Font.Color := Clwhite;
 end;
+
+
+
 
 procedure TForm1.StartIMGClick(Sender: TObject);
 begin
+  form3.Qryinfo.SQL.clear;
   form3.Qryinfo.SQL.Text:=Memo1.Text;
   is_clicked := False;
   first_quest := True;
@@ -241,10 +239,36 @@ begin
     ShowMessage('1');
 end;
 
+
+
+procedure TForm1.bbMouseEnter(BB:TPanel);
+begin
+    BB.Color:= $32CD9A ;
+end;
+
+procedure TForm1.bbMouseLeave(BB:TPanel);
+begin
+     bb.Color:=$0080FF00;
+end;
+
 procedure TForm1.OkPanelClick(Sender: TObject);
 begin
+  if (login.Text <> MSSQLConnection1.UserName) and (Password.text <> MSSQLConnection1.Password)
+  then
+    begin
+    ShowMessage('Incorrect password or username!');
+    Login.Text:='';
+    Password.Text:='';
+    foradm.Visible:=false;
+    end
+  else
+  begin
+  Login.Text:='';
+    Password.Text:='';
+    foradm.Visible:=false;
   Unit2.tr1:=Self.SQLTransaction1;
   Form2.ShowModal;
+  end;
 end;
 
 procedure TForm1.FormCreate(Sender: TObject);
@@ -260,6 +284,8 @@ begin
   else
     Foradm.Visible := False;
 end;
+
+
 
 procedure TForm1.DBNavigator1Click(Sender: TObject; Button: TDBNavButtonType);
 begin

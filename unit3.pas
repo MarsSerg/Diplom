@@ -47,6 +47,8 @@ TForm3 = class(TForm)
   procedure LoadPicture(img: TImage);
   procedure MouseEnter(vars: Tlabel);
   procedure MouseLeave(vars: Tlabel);
+  procedure PnlNextMouseEnter(Sender: TObject);
+  procedure PnlNextMouseLeave(Sender: TObject);
 private
   { private declarations }
 public
@@ -131,6 +133,16 @@ begin
   Vars.Font.Color := clAqua;
 end;
 
+procedure TForm3.PnlNextMouseEnter(Sender: TObject);
+begin
+   PnlNext.Color:=$D355BA
+end;
+
+procedure TForm3.PnlNextMouseLeave(Sender: TObject);
+begin
+  PnlNext.Color:=$00A333A6;
+end;
+
 procedure TForm3.PnlNextClick(Sender: TObject);
 begin
   if (not qryinfo.Active) then
@@ -185,18 +197,18 @@ begin
   Form4.Lblwidth.Caption := '      -     ' + qryonepage.FieldByName('Width').AsString;
   Form4.Lbllength.Caption := '      -     ' + qryonepage.FieldByName('Length').AsString;
   Form4.Lbldcktp.Caption :=
-    Form4.Lbldcktp.Caption + '      -     ' + qryonepage.FieldByName('Type_of_deck').AsString;
+    Form4.Lbldcktp.Caption + '                       -   ' + qryonepage.FieldByName('Type_of_deck').AsString;
   Form4.Lbltrsize.Caption :=
     '  -     ' + qryonepage.FieldByName('Tracks_Size').AsString;
   Form4.Lbltrtype.Caption :=
-    Form4.Lbltrtype.Caption + '      -     ' + qryonepage.FieldByName('Tracks_Type').AsString;
+    Form4.Lbltrtype.Caption + '                   -     ' + qryonepage.FieldByName('Tracks_Type').AsString;
   Form4.Lblwhhrd.Caption :=
     '   -     ' + qryonepage.FieldByName('Wh_Hardness').AsString;
   Form4.Lblwhsize.Caption := '  -     ' + qryonepage.FieldByName('Wheel_Size').AsString;
   Form4.Lblbrname.Caption :=
-    Form4.Lblbrname.Caption + '      -     ' + qryonepage.FieldByName('Bear_name').AsString;
+    Form4.Lblbrname.Caption + '                  -     ' + qryonepage.FieldByName('Bear_name').AsString;
   Form4.Lblmdof.Caption :=
-    Form4.Lblmdof.Caption + '      -     ' + qryonepage.FieldByName('Madeof').AsString;
+    Form4.Lblmdof.Caption + '             -     ' + qryonepage.FieldByName('Madeof').AsString;
   Form4.Lblwhlbs.Caption :=
     '      -     ' + qryonepage.FieldByName('Wheelbase').AsString;
 

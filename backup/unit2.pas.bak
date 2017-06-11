@@ -93,12 +93,6 @@ begin
    wh_id:=lcmbWheels.KeyValue;
    brd_id:=lcmbBoardStyle.KeyValue;
    path:=Lblpath.Caption;
-      qryadd.Sql.Add('Select MAX(Skate_ID) from Skateboard');
-   qryadd.Active:=True;
-   id_board:=StrToInt(qryadd.Fields[0].AsString);
-   qryadd.Active:=False;
-   qryadd.SQL.Clear;
-
    qryadd.SQL.Text:='exec dbo.AddSkate @Picture=:path, @Boardstyle_ID=:brd_id, @Tracks_ID=:tr_id, @Wheels_ID=:wh_id, @Bearings_ID=:bear_id, @Name=:name_txt, @Description=:Descr_txt';
    qryadd.ParamByName('path').AsString := path;
    qryadd.ParamByName('brd_id').AsInteger := StrToInt(brd_id) ;
@@ -109,7 +103,11 @@ begin
    qryadd.ParamByName('descr_txt').AsString := Descr_txt;
    qryadd.ExecSQL;
 
-
+   qryaddrdstl.Sql.Add('Select MAX(Skate_ID) from Skateboard');
+   qryaddrdstl.Active:=True;
+   id_board:=StrToInt(qryaddrdstl.Fields[0].AsString);
+   qryaddrdstl.Active:=False;
+   qryaddrdstl.SQL.Clear;
    for i:=0 to (chkRidingStyles.items.Count)-1 do begin
        if (chkRidingStyles.Checked[i]) then
            begin

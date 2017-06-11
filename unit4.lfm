@@ -1,12 +1,11 @@
 object Form4: TForm4
-  Left = 302
+  Left = 114
   Height = 610
-  Top = 79
-  Width = 895
+  Top = 118
+  Width = 894
   BorderStyle = bsToolWindow
-  Caption = 'Form4'
   ClientHeight = 610
-  ClientWidth = 895
+  ClientWidth = 894
   LCLVersion = '1.2.4.0'
   object Grpdeck: TGroupBox
     Left = -1
@@ -25,6 +24,7 @@ object Form4: TForm4
       Width = 211
     end
     object Image2: TImage
+      Cursor = crNone
       Left = -1
       Height = 616
       Top = -16
@@ -12509,6 +12509,7 @@ object Form4: TForm4
       ClientWidth = 275
       TabOrder = 0
       object LblDescription: TMemo
+        Cursor = crNone
         Left = 0
         Height = 138
         Top = 0
@@ -12773,7 +12774,7 @@ object Form4: TForm4
     object Grpparts: TGroupBox
       Left = 600
       Height = 289
-      Top = 304
+      Top = 296
       Width = 246
       ClientHeight = 271
       ClientWidth = 242
@@ -12794,10 +12795,11 @@ object Form4: TForm4
         ParentFont = False
       end
       object Lbltrsize: TLabel
-        Left = 134
-        Height = 1
-        Top = 40
-        Width = 1
+        Left = 133
+        Height = 18
+        Top = 32
+        Width = 27
+        Caption = 'dsfs'
         Font.CharSet = ANSI_CHARSET
         Font.Color = clWhite
         Font.Height = -16
@@ -12838,10 +12840,11 @@ object Form4: TForm4
         ParentFont = False
       end
       object Lblwhsize: TLabel
-        Left = 144
-        Height = 1
-        Top = 127
-        Width = 1
+        Left = 133
+        Height = 18
+        Top = 120
+        Width = 48
+        Caption = 'sdvsdvs'
         Font.CharSet = ANSI_CHARSET
         Font.Color = clWhite
         Font.Height = -16
@@ -12852,10 +12855,11 @@ object Form4: TForm4
         ParentFont = False
       end
       object Lblwhhrd: TLabel
-        Left = 144
-        Height = 1
-        Top = 153
-        Width = 1
+        Left = 128
+        Height = 18
+        Top = 144
+        Width = 24
+        Caption = 'sgd'
         Font.CharSet = ANSI_CHARSET
         Font.Color = clWhite
         Font.Height = -16

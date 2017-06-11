@@ -1,11 +1,10 @@
 object Form3: TForm3
-  Left = 512
-  Height = 537
-  Top = 152
+  Left = 326
+  Height = 538
+  Top = 129
   Width = 814
   BorderStyle = bsToolWindow
-  Caption = 'Form3'
-  ClientHeight = 537
+  ClientHeight = 538
   ClientWidth = 814
   OnCreate = FormCreate
   OnShow = FormShow
@@ -15977,6 +15976,7 @@ object Form3: TForm3
       end
     end
     object PnlNext: TPanel
+      Cursor = crHandPoint
       Left = 320
       Height = 34
       Top = 480
@@ -15993,6 +15993,8 @@ object Form3: TForm3
       ParentFont = False
       TabOrder = 3
       OnClick = PnlNextClick
+      OnMouseEnter = PnlNextMouseEnter
+      OnMouseLeave = PnlNextMouseLeave
     end
   end
   object Qryinfo: TSQLQuery
