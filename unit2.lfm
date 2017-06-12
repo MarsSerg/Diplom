@@ -1,11 +1,11 @@
 object Form2: TForm2
-  Left = 399
-  Height = 498
-  Top = 147
-  Width = 657
+  Left = 413
+  Height = 496
+  Top = 163
+  Width = 658
   BorderStyle = bsToolWindow
-  ClientHeight = 498
-  ClientWidth = 657
+  ClientHeight = 496
+  ClientWidth = 658
   OnCreate = FormCreate
   OnShow = FormShow
   LCLVersion = '1.2.4.0'
@@ -122,6 +122,13 @@ object Form2: TForm2
       Top = 440
       Width = 168
       Caption = 'Save'
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -19
+      Font.Name = 'Bauhaus 93'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentFont = False
       TabOrder = 1
       OnClick = Panel1Click
     end
@@ -170,6 +177,7 @@ object Form2: TForm2
       Top = 40
       Width = 240
       AutoSize = False
+      MaxLength = 1000
       TabOrder = 4
     end
     object Lblname1: TLabel

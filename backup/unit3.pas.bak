@@ -201,14 +201,14 @@ begin
   Form4.Lbltrsize.Caption :=
     '  -     ' + qryonepage.FieldByName('Tracks_Size').AsString;
   Form4.Lbltrtype.Caption :=
-    Form4.Lbltrtype.Caption + '               -     ' + qryonepage.FieldByName('Tracks_Type').AsString;
+    Form4.Lbltrtype.Caption + '                   -     ' + qryonepage.FieldByName('Tracks_Type').AsString;
   Form4.Lblwhhrd.Caption :=
     '   -     ' + qryonepage.FieldByName('Wh_Hardness').AsString;
   Form4.Lblwhsize.Caption := '  -     ' + qryonepage.FieldByName('Wheel_Size').AsString;
   Form4.Lblbrname.Caption :=
-    Form4.Lblbrname.Caption + '              -     ' + qryonepage.FieldByName('Bear_name').AsString;
+    Form4.Lblbrname.Caption + '                  -     ' + qryonepage.FieldByName('Bear_name').AsString;
   Form4.Lblmdof.Caption :=
-    Form4.Lblmdof.Caption + '         -     ' + qryonepage.FieldByName('Madeof').AsString;
+    Form4.Lblmdof.Caption + '             -     ' + qryonepage.FieldByName('Madeof').AsString;
   Form4.Lblwhlbs.Caption :=
     '      -     ' + qryonepage.FieldByName('Wheelbase').AsString;
 
