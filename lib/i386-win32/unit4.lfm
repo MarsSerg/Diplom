@@ -1,11 +1,12 @@
 object Form4: TForm4
-  Left = 686
+  Left = 455
   Height = 610
-  Top = 94
-  Width = 894
+  Top = 79
+  Width = 895
   BorderStyle = bsToolWindow
   ClientHeight = 610
-  ClientWidth = 894
+  ClientWidth = 895
+  Position = poScreenCenter
   LCLVersion = '1.2.4.0'
   object Grpdeck: TGroupBox
     Left = -1
@@ -12470,14 +12471,14 @@ object Form4: TForm4
     end
     object Name_of_deck: TLabel
       Left = 32
-      Height = 24
-      Top = 24
-      Width = 152
+      Height = 39
+      Top = 16
+      Width = 149
       Caption = 'Name_of_deck'
       Font.CharSet = ANSI_CHARSET
       Font.Color = clWhite
       Font.Height = -21
-      Font.Name = 'Bauhaus 93'
+      Font.Name = 'Chocolate cyr-lat'
       Font.Pitch = fpVariable
       Font.Quality = fqDraft
       Font.Style = [fsBold]
@@ -12486,14 +12487,14 @@ object Form4: TForm4
     end
     object Description: TLabel
       Left = 264
-      Height = 21
-      Top = 72
-      Width = 110
+      Height = 35
+      Top = 64
+      Width = 111
       Caption = 'Description'
       Font.CharSet = ANSI_CHARSET
       Font.Color = clWhite
       Font.Height = -19
-      Font.Name = 'Bauhaus 93'
+      Font.Name = 'Chocolate cyr-lat'
       Font.Pitch = fpVariable
       Font.Quality = fqDraft
       Font.Style = [fsBold]
@@ -12532,14 +12533,14 @@ object Form4: TForm4
     end
     object Riding_styles: TLabel
       Left = 592
-      Height = 21
-      Top = 136
-      Width = 120
+      Height = 35
+      Top = 128
+      Width = 124
       Caption = 'Riding styles'
       Font.CharSet = ANSI_CHARSET
       Font.Color = clWhite
       Font.Height = -19
-      Font.Name = 'Bauhaus 93'
+      Font.Name = 'Chocolate cyr-lat'
       Font.Pitch = fpVariable
       Font.Quality = fqDraft
       Font.Style = [fsBold]
@@ -12550,36 +12551,37 @@ object Form4: TForm4
       Left = 592
       Height = 48
       Top = 160
-      Width = 272
+      Width = 296
       ClientHeight = 30
-      ClientWidth = 268
+      ClientWidth = 292
       TabOrder = 1
       object Lblstyles: TLabel
-        Left = 8
-        Height = 18
+        Left = 0
+        Height = 29
         Top = 0
-        Width = 41
+        Width = 51
         Caption = 'Styles'
         Font.CharSet = ANSI_CHARSET
         Font.Color = clWhite
         Font.Height = -16
-        Font.Name = 'Bauhaus 93'
+        Font.Name = 'Chocolate cyr-lat'
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
+        Font.Style = [fsBold]
         ParentColor = False
         ParentFont = False
       end
     end
     object Params: TLabel
       Left = 272
-      Height = 21
-      Top = 272
-      Width = 72
+      Height = 35
+      Top = 264
+      Width = 75
       Caption = 'Options'
       Font.CharSet = ANSI_CHARSET
       Font.Color = clWhite
       Font.Height = -19
-      Font.Name = 'Bauhaus 93'
+      Font.Name = 'Chocolate cyr-lat'
       Font.Pitch = fpVariable
       Font.Quality = fqDraft
       Font.Style = [fsBold]
@@ -12588,10 +12590,10 @@ object Form4: TForm4
     end
     object Grparam: TGroupBox
       Left = 272
-      Height = 202
+      Height = 208
       Top = 296
       Width = 273
-      ClientHeight = 184
+      ClientHeight = 190
       ClientWidth = 269
       TabOrder = 2
       object Lblwidth: TLabel
@@ -12602,9 +12604,10 @@ object Form4: TForm4
         Font.CharSet = ANSI_CHARSET
         Font.Color = clWhite
         Font.Height = -16
-        Font.Name = 'Bauhaus 93'
+        Font.Name = 'Chocolate cyr-lat'
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
+        Font.Style = [fsBold]
         ParentColor = False
         ParentFont = False
       end
@@ -12616,9 +12619,10 @@ object Form4: TForm4
         Font.CharSet = ANSI_CHARSET
         Font.Color = clWhite
         Font.Height = -16
-        Font.Name = 'Bauhaus 93'
+        Font.Name = 'Chocolate cyr-lat'
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
+        Font.Style = [fsBold]
         ParentColor = False
         ParentFont = False
       end
@@ -12630,9 +12634,10 @@ object Form4: TForm4
         Font.CharSet = ANSI_CHARSET
         Font.Color = clWhite
         Font.Height = -16
-        Font.Name = 'Bauhaus 93'
+        Font.Name = 'Chocolate cyr-lat'
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
+        Font.Style = [fsBold]
         ParentColor = False
         ParentFont = False
       end
@@ -12644,9 +12649,10 @@ object Form4: TForm4
         Font.CharSet = ANSI_CHARSET
         Font.Color = clWhite
         Font.Height = -16
-        Font.Name = 'Bauhaus 93'
+        Font.Name = 'Chocolate cyr-lat'
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
+        Font.Style = [fsBold]
         ParentColor = False
         ParentFont = False
       end
@@ -12658,113 +12664,120 @@ object Form4: TForm4
         Font.CharSet = ANSI_CHARSET
         Font.Color = clWhite
         Font.Height = -16
-        Font.Name = 'Bauhaus 93'
+        Font.Name = 'Chocolate cyr-lat'
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
+        Font.Style = [fsBold]
         ParentColor = False
         ParentFont = False
       end
       object Lbldcktp: TLabel
         Left = 8
-        Height = 18
+        Height = 29
         Top = 160
-        Width = 75
+        Width = 76
         Caption = 'Deck type'
         Font.CharSet = ANSI_CHARSET
         Font.Color = clWhite
         Font.Height = -16
-        Font.Name = 'Bauhaus 93'
+        Font.Name = 'Chocolate cyr-lat'
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
+        Font.Style = [fsBold]
         ParentColor = False
         ParentFont = False
       end
       object Lbllength1: TLabel
         Left = 8
-        Height = 18
+        Height = 29
         Top = 0
-        Width = 46
+        Width = 52
         Caption = 'Length'
         Font.CharSet = ANSI_CHARSET
         Font.Color = clWhite
         Font.Height = -16
-        Font.Name = 'Bauhaus 93'
+        Font.Name = 'Chocolate cyr-lat'
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
+        Font.Style = [fsBold]
         ParentColor = False
         ParentFont = False
       end
       object Lbltail1: TLabel
         Left = 8
-        Height = 18
+        Height = 29
         Top = 128
-        Width = 27
+        Width = 30
         Caption = 'Tail'
         Font.CharSet = ANSI_CHARSET
         Font.Color = clWhite
         Font.Height = -16
-        Font.Name = 'Bauhaus 93'
+        Font.Name = 'Chocolate cyr-lat'
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
+        Font.Style = [fsBold]
         ParentColor = False
         ParentFont = False
       end
       object Lblwidth1: TLabel
         Left = 8
-        Height = 18
+        Height = 29
         Top = 32
-        Width = 41
+        Width = 49
         Caption = 'Width'
         Font.CharSet = ANSI_CHARSET
         Font.Color = clWhite
         Font.Height = -16
-        Font.Name = 'Bauhaus 93'
+        Font.Name = 'Chocolate cyr-lat'
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
+        Font.Style = [fsBold]
         ParentColor = False
         ParentFont = False
       end
       object Lblwhlbs1: TLabel
         Left = 7
-        Height = 18
+        Height = 29
         Top = 64
-        Width = 78
+        Width = 81
         Caption = 'Wheelbase'
         Font.CharSet = ANSI_CHARSET
         Font.Color = clWhite
         Font.Height = -16
-        Font.Name = 'Bauhaus 93'
+        Font.Name = 'Chocolate cyr-lat'
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
+        Font.Style = [fsBold]
         ParentColor = False
         ParentFont = False
       end
       object Lblnose1: TLabel
         Left = 8
-        Height = 18
+        Height = 29
         Top = 96
-        Width = 33
+        Width = 36
         Caption = 'Nose'
         Font.CharSet = ANSI_CHARSET
         Font.Color = clWhite
         Font.Height = -16
-        Font.Name = 'Bauhaus 93'
+        Font.Name = 'Chocolate cyr-lat'
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
+        Font.Style = [fsBold]
         ParentColor = False
         ParentFont = False
       end
     end
     object Parts: TLabel
       Left = 600
-      Height = 21
+      Height = 35
       Top = 272
-      Width = 46
+      Width = 57
       Caption = 'Parts'
       Font.CharSet = ANSI_CHARSET
       Font.Color = clWhite
       Font.Height = -19
-      Font.Name = 'Bauhaus 93'
+      Font.Name = 'Chocolate cyr-lat'
       Font.Pitch = fpVariable
       Font.Quality = fqDraft
       Font.Style = [fsBold]
@@ -12775,187 +12788,199 @@ object Form4: TForm4
       Left = 600
       Height = 289
       Top = 296
-      Width = 246
+      Width = 280
       ClientHeight = 271
-      ClientWidth = 242
+      ClientWidth = 276
       TabOrder = 3
       object Lbltrcks: TLabel
         Left = 8
-        Height = 21
+        Height = 35
         Top = 0
-        Width = 54
+        Width = 68
         Caption = 'Trucks'
         Font.CharSet = ANSI_CHARSET
         Font.Color = clWhite
         Font.Height = -19
-        Font.Name = 'Bauhaus 93'
+        Font.Name = 'Chocolate cyr-lat'
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
+        Font.Style = [fsBold]
         ParentColor = False
         ParentFont = False
       end
       object Lbltrsize: TLabel
         Left = 133
-        Height = 18
+        Height = 29
         Top = 32
-        Width = 27
+        Width = 34
         Caption = 'dsfs'
         Font.CharSet = ANSI_CHARSET
         Font.Color = clWhite
         Font.Height = -16
-        Font.Name = 'Bauhaus 93'
+        Font.Name = 'Chocolate cyr-lat'
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
+        Font.Style = [fsBold]
         ParentColor = False
         ParentFont = False
       end
       object Lbltrtype: TLabel
         Left = 32
-        Height = 18
+        Height = 29
         Top = 56
-        Width = 35
+        Width = 36
         Caption = 'Type'
         Font.CharSet = ANSI_CHARSET
         Font.Color = clWhite
         Font.Height = -16
-        Font.Name = 'Bauhaus 93'
+        Font.Name = 'Chocolate cyr-lat'
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
+        Font.Style = [fsBold]
         ParentColor = False
         ParentFont = False
       end
       object LblWhls: TLabel
         Left = 7
-        Height = 21
+        Height = 35
         Top = 88
-        Width = 60
+        Width = 68
         Caption = 'Wheels'
         Font.CharSet = ANSI_CHARSET
         Font.Color = clWhite
         Font.Height = -19
-        Font.Name = 'Bauhaus 93'
+        Font.Name = 'Chocolate cyr-lat'
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
+        Font.Style = [fsBold]
         ParentColor = False
         ParentFont = False
       end
       object Lblwhsize: TLabel
         Left = 133
-        Height = 18
+        Height = 29
         Top = 120
-        Width = 48
+        Width = 65
         Caption = 'sdvsdvs'
         Font.CharSet = ANSI_CHARSET
         Font.Color = clWhite
         Font.Height = -16
-        Font.Name = 'Bauhaus 93'
+        Font.Name = 'Chocolate cyr-lat'
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
+        Font.Style = [fsBold]
         ParentColor = False
         ParentFont = False
       end
       object Lblwhhrd: TLabel
         Left = 128
-        Height = 18
+        Height = 29
         Top = 144
-        Width = 24
+        Width = 27
         Caption = 'sgd'
         Font.CharSet = ANSI_CHARSET
         Font.Color = clWhite
         Font.Height = -16
-        Font.Name = 'Bauhaus 93'
+        Font.Name = 'Chocolate cyr-lat'
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
+        Font.Style = [fsBold]
         ParentColor = False
         ParentFont = False
       end
       object Lblbr: TLabel
         Left = 7
-        Height = 21
+        Height = 35
         Top = 176
-        Width = 73
+        Width = 82
         Caption = 'Bearings'
         Font.CharSet = ANSI_CHARSET
         Font.Color = clWhite
         Font.Height = -19
-        Font.Name = 'Bauhaus 93'
+        Font.Name = 'Chocolate cyr-lat'
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
+        Font.Style = [fsBold]
         ParentColor = False
         ParentFont = False
       end
       object Lblbrname: TLabel
         Left = 33
-        Height = 18
+        Height = 29
         Top = 208
-        Width = 39
+        Width = 40
         Caption = 'Name'
         Font.CharSet = ANSI_CHARSET
         Font.Color = clWhite
         Font.Height = -16
-        Font.Name = 'Bauhaus 93'
+        Font.Name = 'Chocolate cyr-lat'
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
+        Font.Style = [fsBold]
         ParentColor = False
         ParentFont = False
       end
       object Lblmdof: TLabel
         Left = 33
-        Height = 18
+        Height = 29
         Top = 232
-        Width = 59
+        Width = 61
         Caption = 'Made of'
         Font.CharSet = ANSI_CHARSET
         Font.Color = clWhite
         Font.Height = -16
-        Font.Name = 'Bauhaus 93'
+        Font.Name = 'Chocolate cyr-lat'
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
+        Font.Style = [fsBold]
         ParentColor = False
         ParentFont = False
       end
       object Lbltrsize1: TLabel
         Left = 32
-        Height = 18
+        Height = 29
         Top = 32
-        Width = 29
+        Width = 28
         Caption = 'Size'
         Font.CharSet = ANSI_CHARSET
         Font.Color = clWhite
         Font.Height = -16
-        Font.Name = 'Bauhaus 93'
+        Font.Name = 'Chocolate cyr-lat'
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
+        Font.Style = [fsBold]
         ParentColor = False
         ParentFont = False
       end
       object Lblwhsize1: TLabel
         Left = 32
-        Height = 18
+        Height = 29
         Top = 120
-        Width = 29
+        Width = 28
         Caption = 'Size'
         Font.CharSet = ANSI_CHARSET
         Font.Color = clWhite
         Font.Height = -16
-        Font.Name = 'Bauhaus 93'
+        Font.Name = 'Chocolate cyr-lat'
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
+        Font.Style = [fsBold]
         ParentColor = False
         ParentFont = False
       end
       object Lblwhhrd1: TLabel
         Left = 33
-        Height = 18
+        Height = 29
         Top = 144
-        Width = 63
+        Width = 73
         Caption = 'Hardness'
         Font.CharSet = ANSI_CHARSET
         Font.Color = clWhite
         Font.Height = -16
-        Font.Name = 'Bauhaus 93'
+        Font.Name = 'Chocolate cyr-lat'
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
+        Font.Style = [fsBold]
         ParentColor = False
         ParentFont = False
       end

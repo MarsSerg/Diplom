@@ -1,18 +1,19 @@
 object Form2: TForm2
-  Left = 413
+  Left = 569
   Height = 496
-  Top = 163
+  Top = 117
   Width = 658
   BorderStyle = bsToolWindow
   ClientHeight = 496
   ClientWidth = 658
   OnCreate = FormCreate
   OnShow = FormShow
+  Position = poScreenCenter
   LCLVersion = '1.2.4.0'
   object GroupBox2: TGroupBox
     Left = 0
     Height = 501
-    Top = -1
+    Top = 0
     Width = 659
     ClientHeight = 483
     ClientWidth = 655
@@ -122,6 +123,13 @@ object Form2: TForm2
       Top = 440
       Width = 168
       Caption = 'Save'
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -19
+      Font.Name = 'Bauhaus 93'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentFont = False
       TabOrder = 1
       OnClick = Panel1Click
     end

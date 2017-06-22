@@ -6,7 +6,7 @@ interface
 
 uses
 Classes, SysUtils, mssqlconn, sqldb, DB, FileUtil, Forms, Controls, Graphics,
-Dialogs, StdCtrls, ExtCtrls, Grids, DBCtrls, DBGrids, maskedit, Unit2, Unit3;
+Dialogs, StdCtrls, ExtCtrls, Grids, DBCtrls, DBGrids, maskedit, Unit2, Unit3,Unit6;
 
 type
 
@@ -15,6 +15,7 @@ type
 TForm1 = class(TForm)
   DataSource1: TDataSource;
   DBGrid1: TDBGrid;
+  Image2: TImage;
   Password: TEdit;
   Memo1: TMemo;
   Rbvar1: TLabel;
@@ -40,6 +41,7 @@ TForm1 = class(TForm)
   procedure AdmbuttClick(Sender: TObject);
   procedure DBNavigator1Click(Sender: TObject; Button: TDBNavButtonType);
   procedure FormCreate(Sender: TObject);
+  procedure Image2Click(Sender: TObject);
   procedure Label1Click(Sender: TObject);
   procedure Label2Click(Sender: TObject);
   procedure Label3Click(Sender: TObject);
@@ -274,15 +276,18 @@ end;
 procedure TForm1.FormCreate(Sender: TObject);
 begin
   Wiki.Enabled := False;
+
+end;
+
+procedure TForm1.Image2Click(Sender: TObject);
+begin
+    Form6.ShowModal;
 end;
 
 
 procedure TForm1.AdmbuttClick(Sender: TObject);
 begin
-  if Foradm.Visible = False then
-    Foradm.Visible := True
-  else
-    Foradm.Visible := False;
+ foradm.Visible := Not(foradm.Visible);
 end;
 
 

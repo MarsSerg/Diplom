@@ -6,7 +6,7 @@ interface
 
 uses
 Classes, SysUtils, sqldb, DB, mssqlconn, FileUtil, Forms,
-Controls, Graphics, Dialogs, StdCtrls, ExtCtrls, Unit4;
+Controls, Graphics, Dialogs, StdCtrls, ExtCtrls, Unit4,Unit6;
 
 type
 
@@ -28,6 +28,7 @@ TForm3 = class(TForm)
   Image5: TImage;
   Image6: TImage;
   Image7: TImage;
+  Image8: TImage;
   lbldskr1: TLabel;
   lbldskr2: TLabel;
   lbldskr3: TLabel;
@@ -43,6 +44,7 @@ TForm3 = class(TForm)
   procedure FormCreate(Sender: TObject);
   procedure FormShow(Sender: TObject);
   procedure Formopen(curlabel: Tlabel);
+  procedure Image8Click(Sender: TObject);
   procedure PnlNextClick(Sender: TObject);
   procedure LoadPicture(img: TImage);
   procedure MouseEnter(vars: Tlabel);
@@ -197,22 +199,27 @@ begin
   Form4.Lblwidth.Caption := '      -     ' + qryonepage.FieldByName('Width').AsString;
   Form4.Lbllength.Caption := '      -     ' + qryonepage.FieldByName('Length').AsString;
   Form4.Lbldcktp.Caption :=
-    Form4.Lbldcktp.Caption + '                       -   ' + qryonepage.FieldByName('Type_of_deck').AsString;
+    Form4.Lbldcktp.Caption + '               -   ' + qryonepage.FieldByName('Type_of_deck').AsString;
   Form4.Lbltrsize.Caption :=
     '  -     ' + qryonepage.FieldByName('Tracks_Size').AsString;
   Form4.Lbltrtype.Caption :=
-    Form4.Lbltrtype.Caption + '                   -     ' + qryonepage.FieldByName('Tracks_Type').AsString;
+    Form4.Lbltrtype.Caption + '               -     ' + qryonepage.FieldByName('Tracks_Type').AsString;
   Form4.Lblwhhrd.Caption :=
     '   -     ' + qryonepage.FieldByName('Wh_Hardness').AsString;
   Form4.Lblwhsize.Caption := '  -     ' + qryonepage.FieldByName('Wheel_Size').AsString;
   Form4.Lblbrname.Caption :=
-    Form4.Lblbrname.Caption + '                  -     ' + qryonepage.FieldByName('Bear_name').AsString;
+    Form4.Lblbrname.Caption + '               -     ' + qryonepage.FieldByName('Bear_name').AsString;
   Form4.Lblmdof.Caption :=
-    Form4.Lblmdof.Caption + '             -     ' + qryonepage.FieldByName('Madeof').AsString;
+    Form4.Lblmdof.Caption + '           -     ' + qryonepage.FieldByName('Madeof').AsString;
   Form4.Lblwhlbs.Caption :=
     '      -     ' + qryonepage.FieldByName('Wheelbase').AsString;
 
   form4.showmodal;
+end;
+
+procedure TForm3.Image8Click(Sender: TObject);
+begin
+   Form6.ShowModal;
 end;
 
 
